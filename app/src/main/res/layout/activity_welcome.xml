@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/relativeImprove"
+    tools:context=".activities.auth.WelcomeActivity">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="3.9dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="3.9dp"
+        android:layout_marginBottom="10dp"
+        app:cardCornerRadius="8dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="@color/blue"
+            android:layout_height="match_parent">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/imageView"
+                android:layout_width="450dp"
+                android:layout_height="280dp"
+                app:lottie_autoPlay="true"
+                android:layout_marginTop="30dp"
+                app:lottie_loop="true"
+                app:lottie_url="https://assets2.lottiefiles.com/packages/lf20_puciaact.json" />
+
+
+            <TextView
+                android:id="@+id/txtImproveYourSkills"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imageView"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="18dp"
+                android:layout_marginLeft="16.2dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="15dp"
+                android:fontFamily="@font/poppins_bold"
+                android:lineHeight="50dp"
+                android:lineSpacingExtra="3sp"
+                android:text="@string/welcome_thanks_for_joining"
+                android:textColor="#2f2e41"
+                android:textSize="32sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtOurGDSC"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtImproveYourSkills"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="15dp"
+                android:fontFamily="@font/poppins_bold"
+                android:lineSpacingExtra="2.1sp"
+                android:text="Our GDSC Community"
+                android:textColor="@color/white"
+                android:textSize="27sp" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnNext"
+                android:layout_width="150dp"
+                android:layout_height="45dp"
+                android:layout_below="@+id/txtOurGDSC"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="55dp"
+                android:elevation="5dp"
+                android:foreground="?attr/selectableItemBackground"
+                app:cardCornerRadius="24dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#5b72d8"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/poppins_bold"
+                        android:gravity="center"
+                        android:text="Next"
+                        android:textColor="@color/white"
+                        android:textSize="16.5sp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+
+
+
+        </RelativeLayout>
+
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>

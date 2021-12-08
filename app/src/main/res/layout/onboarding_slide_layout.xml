@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="350dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/blue" />
+
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="35dp"
+        android:fontFamily="@font/poppins_bold"
+        android:lineHeight="35dp"
+        android:lineSpacingExtra="3sp"
+        android:text="Find \nNew Experience"
+        android:textColor="#2f2e41"
+        android:textSize="35sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtTitle"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="55dp"
+        android:layout_marginEnd="15dp"
+        android:fontFamily="@font/poppins_bold"
+        android:lineSpacingExtra="2.1sp"
+        android:text="Get Realtime Experience of solving Problems"
+        android:textColor="#5c5c5c"
+        android:textSize="17sp" />
+
+
+</RelativeLayout>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/onBoardingRelative1"
+    android:layout_height="match_parent"
+    tools:context=".activities.onboarding.OnBoarding_1">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="3.9dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="3.9dp"
+        android:layout_marginBottom="10dp"
+        app:cardCornerRadius="20dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="@color/lightBlue"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="305dp"
+                android:layout_marginStart="-8dp"
+                android:layout_marginTop="20dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/find_new_exp" />
+
+            <ImageView
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="7dp"
+                android:layout_below="@id/imageView"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="35dp"
+                android:layout_marginEnd="28dp"
+                android:src="@drawable/frame_1" />
+
+            <TextView
+                android:id="@+id/txtFindNewExp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/progressBar"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="16.2dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="35dp"
+                android:fontFamily="@font/poppins_bold"
+                android:lineHeight="55dp"
+                android:lineSpacingExtra="3sp"
+                android:text="Find New Experience"
+                android:textColor="#2f2e41"
+                android:textSize="48sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtGetRealtimeExp"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtFindNewExp"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/poppins_bold"
+                android:lineSpacingExtra="2.1sp"
+                android:text="Get Realtime Experience of solving Problems"
+                android:textColor="#5c5c5c"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="16.2dp"
+                android:layout_marginBottom="25dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="@string/underlined_skip"
+                android:textColor="#ae2f2e41"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>

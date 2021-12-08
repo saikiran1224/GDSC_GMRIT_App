@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="330dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="5dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="10dp"
+    android:layout_marginStart="5dp"
+    android:layout_marginEnd="2dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="10dp"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="145dp"
+        android:background="@drawable/purple_background_gradient">
+
+        <TextView
+            android:id="@+id/bannerTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="8dp"
+            android:layout_toStartOf="@+id/bannerIcon"
+            android:fontFamily="@font/poppins_bold"
+            android:lineHeight="20dp"
+            android:maxLines="3"
+            android:text="Find New Experience"
+            android:textColor="#ffc288"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/bannerDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/bannerTitle"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="10dp"
+            android:layout_toStartOf="@id/bannerIcon"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Get new Experience with GDSC App"
+            android:textColor="@color/white" />
+
+
+        <ImageView
+            android:id="@+id/bannerIcon"
+            android:layout_width="160dp"
+            android:layout_height="190dp"
+            android:layout_alignParentEnd="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/find_new_exp" />
+
+
+
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

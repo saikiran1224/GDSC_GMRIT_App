@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">GDSC GMRIT</string>
+    <string name="underlined_skip"><u>Skip</u></string>
+    <string name="welcome_thanks_for_joining"><![CDATA[Welcome & Thanks for Joining]]></string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "239275469479",
+    "project_id": "gdsc-gmrit",
+    "storage_bucket": "gdsc-gmrit.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:239275469479:android:89387f087ea52ae1520982",
+        "android_client_info": {
+          "package_name": "com.gmrit.gdsc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "239275469479-naenjgov5fbh05sk2nagnbd3sijhgstk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWhAmx-EH3AzNGobXoxxKDrMBxQfig-Kw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "239275469479-naenjgov5fbh05sk2nagnbd3sijhgstk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

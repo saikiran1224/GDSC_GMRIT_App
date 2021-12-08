@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@android:color/transparent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:backgroundTint="@color/white"
+        android:background="@drawable/top_rounded_circle"
+        android:layout_height="match_parent">
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="68dp"
+            android:layout_height="6dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="28dp"
+            android:background="@drawable/sides_rounded_circle"
+            android:backgroundTint="#5d5d5d" />
+
+        <TextView
+            android:id="@+id/txtWelcomeBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/divider"
+            android:layout_marginStart="20.6dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Welcome Back to GDSC"
+            android:textColor="#5c5c5c"
+            android:textSize="23sp" />
+
+        <TextView
+            android:id="@+id/txtDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtWelcomeBack"
+            android:layout_marginStart="20.6dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20.6dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Join our GDSC Community and get the best Workshops for free"
+            android:textSize="15sp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            app:endIconMode="clear_text"
+            android:layout_marginStart="20.6dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="45dp"
+            android:hint="Email ID"
+            app:boxStrokeColor="@color/lightYellow"
+            android:id="@+id/materialEmailID"
+            app:hintTextColor="@color/lightYellow"
+            android:layout_below="@id/txtDescription"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textCursorDrawable="@color/lightYellow"
+                android:id="@+id/editEmailID"
+                android:inputType="textEmailAddress" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            app:endIconMode="password_toggle"
+            app:boxStrokeColor="@color/lightYellow"
+            app:hintTextColor="@color/lightYellow"
+            android:layout_marginStart="20.6dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="45dp"
+            android:id="@+id/materialPassword"
+            android:hint="Password"
+            app:hintAnimationEnabled="true"
+            android:layout_below="@id/materialEmailID"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textCursorDrawable="@color/lightYellow"
+                android:id="@+id/editPassword"
+                android:inputType="textPassword" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:id="@+id/txtForgetPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/materialPassword"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/poppins_bold"
+            android:lineSpacingExtra="4.8sp"
+            android:text="Forget Password ? Click here"
+            android:textColor="#5c5c5c"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="150dp"
+            app:cardCornerRadius="24dp"
+            android:layout_below="@+id/txtForgetPassword"
+            android:layout_centerInParent="true"
+            android:elevation="5dp"
+            android:layout_marginTop="22dp"
+            android:id="@+id/btnLogin"
+            android:foreground="?attr/selectableItemBackground"
+            android:layout_height="45dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#1e1e1e"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+                    android:textSize="16.5sp"
+                    android:gravity="center"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textColor="@color/white"
+                    android:layout_height="wrap_content"
+                    android:text="Login" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <TextView
+            android:id="@+id/txtSignUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnLogin"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="15dp"
+            android:fontFamily="@font/poppins_bold"
+            android:lineSpacingExtra="4.8sp"
+            android:text="Don't have an account? Signup here"
+            android:textColor="#5c5c5c"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>

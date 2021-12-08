@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="330dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="5dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="5dp"
+    android:layout_marginStart="5dp"
+    android:layout_marginEnd="2dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="20dp"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="230dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="330dp"
+            android:layout_margin="5dp"
+            app:cardCornerRadius="12dp"
+            android:id="@+id/card_layout"
+            app:cardElevation="10dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="10dp"
+            android:layout_height="135dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/blue_background_gradient">
+
+                <TextView
+                    android:id="@+id/bannerTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_toStartOf="@+id/bannerIcon"
+                    android:fontFamily="@font/poppins_bold"
+                    android:lineHeight="20dp"
+                    android:maxLines="3"
+                    android:text="Find New Experience"
+                    android:textColor="#ffc288"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/bannerDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/bannerTitle"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_toStartOf="@id/bannerIcon"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Get new Experience with GDSC App"
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
+
+
+                <ImageView
+                    android:id="@+id/bannerIcon"
+                    android:layout_width="160dp"
+                    android:layout_height="100dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:padding="20dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/kotlin_icon" />
+
+
+
+
+
+            </RelativeLayout>
+
+
+
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <TextView
+            android:id="@+id/eventTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/card_layout"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Android Study Jam"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/eventDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/eventTitle"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="5dp"
+            android:layout_toStartOf="@id/btnKnowMore"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Keep yourself updated with the latest launch"
+            android:textSize="12sp" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btnKnowMore"
+            android:layout_width="100dp"
+            android:layout_alignParentEnd="true"
+            android:layout_height="35dp"
+            android:layout_below="@+id/card_layout"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="8dp"
+            android:elevation="5dp"
+            android:layout_centerInParent="true"
+            android:foreground="?attr/selectableItemBackground"
+            app:cardCornerRadius="24dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#5b72d8"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/poppins"
+                    android:gravity="center"
+                    android:text="KNOW MORE"
+                    android:textColor="@color/white"
+                    android:textSize="11sp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

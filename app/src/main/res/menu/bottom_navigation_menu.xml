@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/ic_explore"
+        android:title="Explore"
+        android:icon="@drawable/ic_baseline_explore_24" />
+
+    <item
+        android:id="@+id/ic_pages"
+        android:title="My Events"
+        android:icon="@drawable/ic_baseline_book_24" />
+
+</menu>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <solid android:color="#ffffff" />
+
+    <corners
+        android:radius="25dp"
+        />
+    <stroke
+        android:color="#989898"
+        android:width="0.3dp"/>
+
+
+
+    <!--BottomLeftRadius and BottomRightRadius can be used-->
+
+
+</shape>
