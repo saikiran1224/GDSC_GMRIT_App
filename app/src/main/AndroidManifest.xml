@@ -11,8 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GDSCGMRIT">
+
         <activity
-            android:name=".activities.general.HomeFragmentsActivity"
+            android:name=".activities.general.MainActivity"
             android:exported="false" />
         <activity
             android:name=".activities.onboarding.OnBoardingActivity"
@@ -22,18 +23,6 @@
             android:exported="false" />
         <activity
             android:name=".activities.auth.SignUpActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activities.general.MainActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activities.onboarding.OnBoarding_3"
-            android:exported="false" />
-        <activity
-            android:name=".activities.onboarding.OnBoarding_2"
-            android:exported="false" />
-        <activity
-            android:name=".activities.onboarding.OnBoarding_1"
             android:exported="false" />
         <activity
             android:name=".activities.onboarding.SplashScreenActivity"

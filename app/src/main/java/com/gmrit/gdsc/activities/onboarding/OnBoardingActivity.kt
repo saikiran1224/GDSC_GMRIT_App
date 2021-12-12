@@ -62,7 +62,7 @@ class OnBoardingActivity : AppCompatActivity() {
         // Dots Indicator
         val dotsIndicator = findViewById<DotsIndicator>(R.id.dots_indicator)
 
-        val imagesList = arrayListOf<Int>(R.drawable.blue, R.drawable.blue, R.drawable.yellow)
+        val imagesList = arrayListOf<Int>(R.drawable.blue, R.drawable.red, R.drawable.yellow)
 
         val titlesList = arrayListOf<String>("Find New Experience", "Improve your Skills", "Join our Community")
 

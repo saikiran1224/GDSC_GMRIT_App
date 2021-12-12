@@ -12,7 +12,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.cardview.widget.CardView
 import com.gmrit.gdsc.R
-import com.gmrit.gdsc.activities.onboarding.OnBoarding_3
+import com.gmrit.gdsc.activities.general.MainActivity
 import com.gmrit.gdsc.models.StudentData
 import com.gmrit.gdsc.utils.AppPreferences
 import com.google.android.material.textfield.TextInputEditText
@@ -149,7 +149,7 @@ class SignUpActivity : AppCompatActivity() {
         txtLogin!!.text = spannable_3
 
         txtLogin.setOnClickListener {
-            val intent = Intent(this, OnBoarding_3::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
     }

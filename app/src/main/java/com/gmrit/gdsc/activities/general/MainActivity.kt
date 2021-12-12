@@ -2,105 +2,59 @@ package com.gmrit.gdsc.activities.general
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.LinearLayout
-import android.widget.TextView
-import android.widget.Toast
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.gmrit.gdsc.R
-import com.gmrit.gdsc.adapters.BannersAdapter
-import com.gmrit.gdsc.adapters.PastEventsAdapter
-import com.gmrit.gdsc.adapters.UpcomingEventsAdapter
-import com.gmrit.gdsc.models.BannerData
-import com.gmrit.gdsc.models.PastEventData
-import com.gmrit.gdsc.models.UpcomingEventData
-import com.gmrit.gdsc.utils.AppPreferences
-import org.w3c.dom.Text
+import androidx.fragment.app.Fragment
+import com.gmrit.gdsc.fragments.ExploreFragment
+import com.gmrit.gdsc.fragments.MyEventsFragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
+
+import androidx.annotation.NonNull
+
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var txtStudentName: TextView
+    private val exploreFragment: ExploreFragment = ExploreFragment()
+    private val myEventsFragment: MyEventsFragment = MyEventsFragment()
 
-    lateinit var recyclerBanners: RecyclerView
-    lateinit var bannersAdapter: BannersAdapter
-    lateinit var eventsDataList: ArrayList<BannerData>
-
-    lateinit var recyclerUpcomingEvents: RecyclerView
-    lateinit var upcomingEventsAdapter: UpcomingEventsAdapter
-    lateinit var upcomingEventsList: ArrayList<UpcomingEventData>
-
-    lateinit var recyclerPastEvents: RecyclerView
-    lateinit var pastEventsAdapter: PastEventsAdapter
-    lateinit var pastEventsList: ArrayList<PastEventData>
-
+    lateinit var bottomNavigationView: BottomNavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        window.statusBarColor = getColor(R.color.purple)
+        window.statusBarColor = getColor(com.gmrit.gdsc.R.color.purple)
 
-        setContentView(R.layout.activity_main)
+        setContentView(com.gmrit.gdsc.R.layout.activity_main)
 
-        AppPreferences.init(this)
+        bottomNavigationView = findViewById(com.gmrit.gdsc.R.id.bottomNavigationView)
 
-        txtStudentName = findViewById(R.id.txtStudentName)
+        replaceFragment(exploreFragment)
 
-        if(AppPreferences.isLogin == true) {
+        bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
-            txtStudentName.text = AppPreferences.studentName
+    }
 
-            Toast.makeText(this, "Welcome, " + AppPreferences.studentName, Toast.LENGTH_LONG).show()
+    private val mOnNavigationItemSelectedListener =
+        BottomNavigationView.OnNavigationItemSelectedListener { item ->
+            var fragment: Fragment? = null
+            when (item.itemId) {
+                com.gmrit.gdsc.R.id.ic_explore -> {
+                    fragment = exploreFragment
+                }
+
+                com.gmrit.gdsc.R.id.ic_pages -> {
+                    fragment = myEventsFragment
+                }
+                else -> {
+
+                }
+            }
+            replaceFragment(fragment!!)
         }
 
-        recyclerBanners = findViewById(R.id.recyclerBanners)
-        eventsDataList = ArrayList()
-
-        recyclerUpcomingEvents = findViewById(R.id.upcomingRecycler)
-        upcomingEventsList = ArrayList()
-
-        recyclerPastEvents = findViewById(R.id.pastEventsRecycler)
-        pastEventsList = ArrayList()
-
-
-        // For Banners RecyclerView
-        eventsDataList.add(BannerData("Find New Experience", "Get New Experience with GDSC App", R.drawable.find_new_exp))
-        eventsDataList.add(BannerData("Find New Experience", "Get New Experience with GDSC App", R.drawable.find_new_exp))
-        eventsDataList.add(BannerData("Find New Experience", "Get New Experience with GDSC App", R.drawable.find_new_exp))
-
-        bannersAdapter = BannersAdapter(this, eventsDataList)
-        recyclerBanners.adapter = bannersAdapter
-        recyclerBanners.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        recyclerBanners.setHasFixedSize(true)
-
-
-        // For UpcomingEvents RecyclerView
-        upcomingEventsList.add(UpcomingEventData("Android Study Jams","Keep yourself updated with the new launch", "Find New Experience","Get new experience with GDSC App", R.drawable.kotlin_icon))
-        upcomingEventsList.add(UpcomingEventData("Android Study Jams","Keep yourself updated with the new launch", "Find New Experience","Get new experience with GDSC App", R.drawable.kotlin_icon))
-        upcomingEventsList.add(UpcomingEventData("Android Study Jams","Keep yourself updated with the new launch", "Find New Experience","Get new experience with GDSC App", R.drawable.kotlin_icon))
-
-        upcomingEventsAdapter = UpcomingEventsAdapter(this, upcomingEventsList)
-        recyclerUpcomingEvents.adapter = upcomingEventsAdapter
-        recyclerUpcomingEvents.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        recyclerUpcomingEvents.setHasFixedSize(true)
-
-
-        // For PastEvents Recycler View
-        pastEventsList.add(PastEventData("Android Study Jams","Keep yourself updated with the new launch", "Find New Experience","Get new experience with GDSC App", R.drawable.kotlin_icon))
-        pastEventsList.add(PastEventData("Android Study Jams","Keep yourself updated with the new launch", "Find New Experience","Get new experience with GDSC App", R.drawable.kotlin_icon))
-        pastEventsList.add(PastEventData("Android Study Jams","Keep yourself updated with the new launch", "Find New Experience","Get new experience with GDSC App", R.drawable.kotlin_icon))
-
-        pastEventsAdapter = PastEventsAdapter(this, pastEventsList)
-        recyclerPastEvents.adapter = pastEventsAdapter
-        recyclerPastEvents.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        recyclerPastEvents.setHasFixedSize(true)
-
-
-
-
-
-
-
-
-
+    // This method is used to replace Fragment
+    private fun replaceFragment(fragment : Fragment): Boolean {
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(com.gmrit.gdsc.R.id.fragmentContainer,fragment)
+        transaction.commit()
+        return true
     }
 }

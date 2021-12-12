@@ -19,7 +19,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="28dp"
             android:background="@drawable/sides_rounded_circle"
-            android:backgroundTint="#5d5d5d" />
+            android:backgroundTint="#5C5D5D5D" />
 
         <TextView
             android:id="@+id/txtWelcomeBack"
@@ -29,7 +29,7 @@
             android:layout_marginStart="20.6dp"
             android:fontFamily="@font/poppins_bold"
             android:text="Welcome Back to GDSC"
-            android:textColor="#5c5c5c"
+            android:textColor="#1e1e1e"
             android:textSize="23sp" />
 
         <TextView
@@ -104,7 +104,7 @@
             android:fontFamily="@font/poppins_bold"
             android:lineSpacingExtra="4.8sp"
             android:text="Forget Password ? Click here"
-            android:textColor="#5c5c5c"
+            android:textColor="#1e1e1e"
             android:textSize="14sp"
             android:textStyle="bold" />
 
@@ -152,7 +152,7 @@
             android:fontFamily="@font/poppins_bold"
             android:lineSpacingExtra="4.8sp"
             android:text="Don't have an account? Signup here"
-            android:textColor="#5c5c5c"
+            android:textColor="#1e1e1e"
             android:textSize="13sp"
             android:textStyle="bold" />
 
