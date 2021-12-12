@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.CompletedFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/imageView"
+            android:layout_width="450dp"
+            android:layout_height="280dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="30dp"
+            android:padding="55dp"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_url="https://assets1.lottiefiles.com/packages/lf20_fyqtse3p.json" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="25dp"
+            android:layout_below="@id/imageView"
+            android:layout_marginEnd="25dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:layout_marginTop="35dp"
+            android:text="Sorry, You haven't registered for any Events, Join Now!"
+            android:textSize="18sp" />
+
+
+    </RelativeLayout>
+
+
+</androidx.core.widget.NestedScrollView>

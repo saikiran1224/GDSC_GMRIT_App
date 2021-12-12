@@ -11,17 +11,16 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:layout_width="32dp"
             android:id="@+id/iconMenu"
+            android:layout_width="32dp"
             android:layout_height="30dp"
-            app:tint="@color/black"
-            android:contentDescription="@string/app_name"
-            android:layout_marginStart="11dp"
-            android:layout_alignParentTop="true"
             android:layout_alignParentStart="true"
-            android:src="@drawable/ic_baseline_menu_24"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="11dp"
             android:layout_marginTop="20dp"
-            />
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_baseline_menu_24"
+            app:tint="@color/black" />
 
         <ImageView
             android:id="@+id/iconNotifications"
@@ -187,7 +186,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/txtPastEventsDesc"
             android:layout_alignParentStart="true"
-            android:layout_marginStart="5dp"
+            android:layout_marginStart="0dp"
             android:layout_marginTop="20dp"
             android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />

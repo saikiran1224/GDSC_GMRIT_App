@@ -27,11 +27,10 @@
                 android:id="@+id/imageView"
                 android:layout_width="450dp"
                 android:layout_height="280dp"
-                app:lottie_autoPlay="true"
                 android:layout_marginTop="30dp"
+                app:lottie_autoPlay="true"
                 app:lottie_loop="true"
                 app:lottie_url="https://assets2.lottiefiles.com/packages/lf20_puciaact.json" />
-
 
             <TextView
                 android:id="@+id/txtImproveYourSkills"

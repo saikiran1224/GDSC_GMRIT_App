@@ -1,14 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.MyEventsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iconMenu"
+            android:layout_width="32dp"
+            android:layout_height="30dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="20dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_baseline_menu_24"
+            app:tint="@color/black" />
+
+        <ImageView
+            android:id="@+id/iconNotifications"
+            android:layout_width="32dp"
+            android:layout_height="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="15dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_baseline_notifications_none_24"
+            app:tint="@color/black" />
+
+    <!-- tablayout which contains which is
+               important to show tabs -->
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_tablayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_below="@id/iconMenu"
+            app:tabIndicatorColor="@color/purple"
+            app:tabIndicatorHeight="3dp"
+            app:tabMode="fixed" />
+
+
+        <!-- view pager is used to open other fragment by using
+         left or right swip-->
+        <androidx.viewpager.widget.ViewPager
+        android:id="@+id/tab_viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="My Events Fragment" />
+            android:layout_below="@id/tab_tablayout"
+        android:layout_marginTop="8dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-</FrameLayout>
+    </RelativeLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
