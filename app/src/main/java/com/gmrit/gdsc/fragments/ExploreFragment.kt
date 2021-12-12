@@ -1,6 +1,7 @@
 package com.gmrit.gdsc.fragments
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import androidx.fragment.app.Fragment
@@ -9,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AccelerateInterpolator
 import android.view.animation.Interpolator
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -26,6 +28,10 @@ import com.tbuonomo.viewpagerdotsindicator.DotsIndicator
 import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
 
 import androidx.viewpager.widget.ViewPager
+import com.gmrit.gdsc.activities.general.LearnAndroidDevActivity
+import com.gmrit.gdsc.activities.general.LearnProgrammingActivity
+import com.gmrit.gdsc.activities.general.LearnUIUXActivity
+import com.gmrit.gdsc.activities.general.LearnWebDevActivity
 import java.lang.IllegalArgumentException
 import java.lang.reflect.Field
 import java.util.*
@@ -49,6 +55,12 @@ class ExploreFragment : Fragment() {
     lateinit var recyclerPastEvents: RecyclerView
     lateinit var pastEventsAdapter: PastEventsAdapter
     lateinit var pastEventsList: ArrayList<PastEventData>
+
+    // See your Interest
+    lateinit var imageLearnWebDev: ImageView
+    lateinit var imageLearnUIUXDev: ImageView
+    lateinit var imageLearnProgrammingDev: ImageView
+    lateinit var imageLearnAndroidDev: ImageView
 
     private var TIME_LIMIT by Delegates.notNull<Long>()
 
@@ -86,6 +98,34 @@ class ExploreFragment : Fragment() {
 
         recyclerPastEvents = view.findViewById(R.id.pastEventsRecycler)
         pastEventsList = ArrayList()
+
+        // See your Interest
+        imageLearnWebDev = view.findViewById(R.id.imageLearnWebDev)
+        imageLearnAndroidDev = view.findViewById(R.id.imageLearnAndroidDev)
+        imageLearnProgrammingDev = view.findViewById(R.id.imageLearnProgrammingDev)
+        imageLearnUIUXDev = view.findViewById(R.id.imageLearnUIUXDev)
+
+        imageLearnWebDev.setOnClickListener {
+            val intent = Intent(context, LearnWebDevActivity::class.java)
+            startActivity(intent)
+        }
+
+        imageLearnAndroidDev.setOnClickListener {
+            val intent = Intent(context, LearnAndroidDevActivity::class.java)
+            startActivity(intent)
+        }
+
+        imageLearnProgrammingDev.setOnClickListener {
+            val intent = Intent(context, LearnProgrammingActivity::class.java)
+            startActivity(intent)
+        }
+
+        imageLearnUIUXDev.setOnClickListener {
+            val intent = Intent(context, LearnUIUXActivity::class.java)
+            startActivity(intent)
+        }
+
+
 
 
         loadBannersData()

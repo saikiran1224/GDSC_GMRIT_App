@@ -1,13 +1,16 @@
 package com.gmrit.gdsc.adapters
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.gmrit.gdsc.R
+import com.gmrit.gdsc.activities.general.EventProfileActivity
 import com.gmrit.gdsc.models.BannerData
 import com.gmrit.gdsc.models.PastEventData
 import com.gmrit.gdsc.models.UpcomingEventData
@@ -29,6 +32,11 @@ class PastEventsAdapter(private val context: Context, private val pastEventsList
         holder.bannerDescription.text = pastEventsList[position].bannerDesc
         holder.bannerImage.setImageResource(pastEventsList[position].bannerIcon)
 
+        holder.btnKnowMore.setOnClickListener {
+            val intent = Intent(context, EventProfileActivity::class.java)
+            context.startActivity(intent)
+        }
+
       // Glide.with(context).load(eventsDataList[position].toString()).into(holder.eventImage)
     }
 
@@ -43,6 +51,9 @@ class PastEventsAdapter(private val context: Context, private val pastEventsList
         val bannerTitle = itemView.findViewById<TextView>(R.id.bannerTitle)
         val bannerDescription = itemView.findViewById<TextView>(R.id.bannerDescription)
         val bannerImage = itemView.findViewById<ImageView>(R.id.bannerIcon)
+
+        val btnKnowMore = itemView.findViewById<CardView>(R.id.btnKnowMore)
+
 
     }
 }

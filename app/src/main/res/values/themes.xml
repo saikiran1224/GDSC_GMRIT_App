@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.GDSCGMRIT" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimary">@color/purple</item>
         <item name="colorPrimaryVariant">@color/lightBlue</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->

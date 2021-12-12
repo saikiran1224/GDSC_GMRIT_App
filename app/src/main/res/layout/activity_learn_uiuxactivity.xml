@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.general.LearnUIUXActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/coverImage"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/uiux_dev" />
+
+            <TextView
+                android:id="@+id/txtLearn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/coverImage"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Learn"
+                android:textColor="#000444"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/txtWebDevelopment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtLearn"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="0dp"
+                android:background="@color/uiux_dev"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="center_vertical"
+                android:text="\tUX/UI Designing\t\t\t\t"
+                android:textColor="@color/white"
+                android:textSize="25sp" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imageProfilePhoto"
+                android:layout_width="58dp"
+                android:layout_height="58dp"
+                android:layout_below="@id/txtWebDevelopment"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="18dp"
+                android:paddingTop="5dp"
+                android:src="@drawable/sai_kiran_pic" />
+
+            <TextView
+                android:id="@+id/txtFacilitator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtWebDevelopment"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="25dp"
+                android:layout_toEndOf="@id/imageProfilePhoto"
+                android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_right_24"
+                android:drawableTint="#5b72d8"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="center_vertical"
+                android:text="Facilitator"
+                android:textColor="#5b72d8"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtFacilitator"
+                android:layout_marginStart="12dp"
+                android:layout_toEndOf="@id/imageProfilePhoto"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Yeswanth Choudari"
+                android:textColor="#484848"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/txtAboutTheCourse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imageProfilePhoto"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="22dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="About the Course"
+                android:textColor="#484848"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/txtDescAbout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtAboutTheCourse"
+                android:layout_marginStart="18dp"
+                android:layout_marginEnd="5dp"
+                android:fontFamily="@font/poppins"
+                android:text="Lorem Ipsum Ipsum Lorem Lorem Ipsum Ipsum Lorem Lorem Ipsum Ipsum Lorem Lorem Ipsum Ipsum Lorem Lorem Ipsum Ipsum Lorem Lorem Ipsum Ipsum Lorem Ipsum"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/txtThingsyouWillLearn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtDescAbout"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Things you will learn"
+                android:textColor="#484848"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/txtDescThings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtThingsyouWillLearn"
+                android:layout_marginStart="18dp"
+                android:layout_marginEnd="5dp"
+                android:textSize="13sp"
+                android:fontFamily="@font/poppins"
+                android:text="Lorem Ipsum Ipsum Lorem Lorem Ipsum Ipsum Lorem Lorem Ipsum Ipsum Lorem Lorem Ipsum Ipsum Lorem Lorem Ipsum Ipsum Lorem Lorem Ipsum Ipsum Lorem Ipsum" />
+
+
+            <TextView
+                android:id="@+id/txtRequirements"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtDescThings"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Requirements"
+                android:textColor="#484848"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/txtDescRequirements"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtRequirements"
+                android:layout_marginStart="18dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="80dp"
+                android:fontFamily="@font/poppins"
+                android:textSize="13sp"
+                android:text="Lorem Ipsum Ipsum Lorem Lorem Ipsum Ipsum Lorem Lorem Ipsum Ipsum Lorem Lorem Ipsum Ipsum Lorem Lorem Ipsum Ipsum Lorem Lorem Ipsum Ipsum Lorem Ipsum" />
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <!--    Start of Inflated Layout-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btnNext"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="55dp"
+            android:layout_marginStart="55dp"
+            android:layout_marginBottom="10dp"
+            android:elevation="5dp"
+            android:foreground="?attr/selectableItemBackground"
+            app:cardCornerRadius="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#5b72d8"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/poppins_bold"
+                    android:gravity="center"
+                    android:text="Enroll Now"
+                    android:textColor="@color/white"
+                    android:textSize="18.5sp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+</RelativeLayout>

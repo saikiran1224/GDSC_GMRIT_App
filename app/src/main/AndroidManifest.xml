@@ -11,7 +11,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GDSCGMRIT">
-
+        <activity
+            android:name=".activities.general.EventProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.general.LearnProgrammingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.general.LearnUIUXActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.general.LearnAndroidDevActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.general.LearnWebDevActivity"
+            android:exported="false" />
         <activity
             android:name=".activities.general.MainActivity"
             android:exported="false" />

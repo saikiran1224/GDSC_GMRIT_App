@@ -20,4 +20,8 @@
     <color name="purple">#5752d0</color>
 
     <color name="text_grey">#484848</color>
+    <color name="pink_web">#ff8b88</color>
+    <color name="android_dev">#ffbd7f</color>
+    <color name="uiux_dev">#53bcad</color>
+    <color name="programming_dev">#8d93ef</color>
 </resources>
