@@ -40,9 +40,12 @@
             android:id="@+id/tab_tablayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
             android:layout_below="@id/iconMenu"
-            app:tabIndicatorColor="@color/purple"
+            android:layout_marginTop="5dp"
+            app:tabIndicatorColor="#ff6279"
+            app:tabTextAppearance="@style/tab_text"
+            app:tabTextColor="#707070"
+            app:tabSelectedTextColor="#102655"
             app:tabIndicatorHeight="3dp"
             app:tabMode="fixed" />
 
