@@ -91,6 +91,7 @@ class OnBoardingActivity : AppCompatActivity() {
         bottomSheetDialog.window!!.setBackgroundDrawableResource(android.R.color.transparent)
         bottomSheetDialog.setCanceledOnTouchOutside(true)
 
+
         val txtWelcomeBack = bottomSheetDialog.findViewById<TextView>(R.id.txtWelcomeBack)
         val txtForgotPass = bottomSheetDialog.findViewById<TextView>(R.id.txtForgetPassword)
         val txtSignUpHere = bottomSheetDialog.findViewById<TextView>(R.id.txtSignUp)

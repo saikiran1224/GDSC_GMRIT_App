@@ -18,7 +18,10 @@
             android:layout_alignParentTop="true"
             android:layout_marginStart="11dp"
             android:layout_marginTop="20dp"
+            android:clickable="true"
             android:contentDescription="@string/app_name"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
             android:src="@drawable/ic_baseline_menu_24"
             app:tint="@color/black" />
 
@@ -60,21 +63,67 @@
             android:textColor="@color/purple"
             android:textSize="28sp" />
 
+
+
+
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:id="@+id/constraintLayout"
-            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            android:backgroundTint="@color/white"
             android:layout_below="@id/txtStudentName"
             android:layout_height="wrap_content">
 
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginStart="13dp"
+                android:layout_marginEnd="13dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="10dp">
+
+                <org.imaginativeworld.whynotimagecarousel.ImageCarousel
+                    android:layout_width="match_parent"
+                    app:showNavigationButtons="false"
+                    app:carouselBackground="@android:color/transparent"
+                    app:showTopShadow="false"
+                    app:showBottomShadow="false"
+                    app:showIndicator="true"
+                    android:backgroundTint="@color/white"
+                    app:autoWidthFixing="true"
+                    app:autoPlay="true"
+                    app:carouselType="SHOWCASE"
+                    app:scaleOnScroll="true"
+                    android:background="@color/white"
+                    app:scalingFactor="0.5"
+                    app:imagePlaceholder="@color/black"
+                    app:showCaption="false"
+                    android:id="@+id/carousel"
+                    android:layout_height="match_parent" />
+
+
+            </androidx.cardview.widget.CardView>
+
+
+<!--
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/bannersViewPager"
                 android:layout_width="match_parent"
                 android:layout_alignParentStart="true"
                 android:layout_height="match_parent" />
+-->
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
+
+<!--        Temporarily Set this for Gone-->
         <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
             android:id="@+id/dots_indicator"
             android:layout_width="wrap_content"
@@ -85,6 +134,7 @@
             android:layout_marginBottom="35dp"
             app:dotsColor="#2f2e41"
             app:dotsCornerRadius="8dp"
+            android:visibility="gone"
             app:dotsStrokeColor="#2f2e41"
             app:dotsSize="8dp"
             app:dotsSpacing="4dp"
@@ -103,7 +153,7 @@
             android:layout_below="@id/constraintLayout"
             android:layout_alignParentStart="true"
             android:layout_marginStart="11dp"
-            android:layout_marginTop="35dp"
+            android:layout_marginTop="25dp"
             android:fontFamily="@font/poppins_bold"
             android:text="Upcoming"
             android:textColor="@color/text_grey"
@@ -114,7 +164,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/constraintLayout"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="42dp"
+            android:layout_marginTop="32dp"
             android:layout_marginEnd="20dp"
             android:fontFamily="@font/poppins_bold"
             android:text="SEE ALL"
@@ -122,14 +172,14 @@
             android:textSize="14sp" />
 
         <TextView
+            android:id="@+id/txtUpcomingDesc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Get yourself updated with the new launch"
             android:layout_below="@id/txtUpcoming"
             android:layout_marginStart="11dp"
-            android:id="@+id/txtUpcomingDesc"
+            android:layout_marginTop="1dp"
             android:fontFamily="@font/poppins_medium"
-            android:layout_marginTop="1dp" />
+            android:text="Get yourself updated with the new launch" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/upcomingRecycler"
@@ -138,7 +188,7 @@
             android:layout_below="@id/txtUpcomingDesc"
             android:layout_alignParentStart="true"
             android:layout_marginStart="5dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="0dp"
             android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
@@ -306,25 +356,14 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="200dp"
+            android:id="@+id/btnShareYourIdea"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
             android:layout_below="@id/imagesLayout"
-            android:scaleType="fitXY"
             android:layout_marginTop="20dp"
-            android:src="@drawable/ideas_image" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            android:scaleType="fitXY"
+            android:src="@drawable/ideas_image"
+            android:focusable="true" />
 
     </RelativeLayout>
 

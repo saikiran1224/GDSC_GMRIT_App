@@ -28,10 +28,10 @@ class OnGoingEventsAdapter(private val context: Context, private val onGoingEven
         holder.eventTitle.text = onGoingEventsList[position].eventTitle
         holder.eventDescription.text = onGoingEventsList[position].eventDesc
 
-        holder.bannerTitle.text = onGoingEventsList[position].bannerTitle
+       /* holder.bannerTitle.text = onGoingEventsList[position].bannerTitle
         holder.bannerDescription.text = onGoingEventsList[position].bannerDesc
         holder.bannerImage.setImageResource(onGoingEventsList[position].bannerIcon)
-
+*/
         holder.btnKnowMore.setOnClickListener {
             val intent = Intent(context, EventProfileActivity::class.java)
             context.startActivity(intent)
@@ -48,10 +48,11 @@ class OnGoingEventsAdapter(private val context: Context, private val onGoingEven
 
         val eventTitle = itemView.findViewById<TextView>(R.id.eventTitle)
         val eventDescription = itemView.findViewById<TextView>(R.id.eventDescription)
+        /*
         val bannerTitle = itemView.findViewById<TextView>(R.id.bannerTitle)
         val bannerDescription = itemView.findViewById<TextView>(R.id.bannerDescription)
         val bannerImage = itemView.findViewById<ImageView>(R.id.bannerIcon)
-
+*/
         val btnKnowMore = itemView.findViewById<CardView>(R.id.btnKnowMore)
 
 

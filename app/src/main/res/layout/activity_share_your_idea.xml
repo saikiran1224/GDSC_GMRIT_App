@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.general.ShareYourIdeaActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/form_bg"
+        android:scaleType="centerCrop" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/txtHaveAnIdea"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="45dp"
+                android:fontFamily="@font/poppins_bold"
+                android:paddingEnd="18dp"
+                android:gravity="center"
+                android:paddingStart="18dp"
+                android:text="Have an idea! share with us"
+                android:textColor="@color/white"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/txtShareYourIdea"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtHaveAnIdea"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/poppins_bold"
+                android:paddingStart="18dp"
+                android:paddingEnd="18dp"
+                android:gravity="center"
+                android:text="Share your idea with us and lets help together to build the product"
+                android:textColor="@color/white"
+                android:textSize="15.5sp" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                app:cardCornerRadius="18dp"
+                android:background="@color/lightYellow"
+                android:layout_marginTop="18dp"
+                android:layout_marginStart="18dp"
+                app:strokeColor="@color/lightYellow"
+                android:layout_marginEnd="18dp"
+                app:cardElevation="8dp"
+                android:layout_below="@id/txtShareYourIdea"
+                android:layout_marginBottom="30dp"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/edtFullName"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        app:boxStrokeColor="@color/blue_button_clr"
+                        android:layout_marginEnd="20dp"
+                        android:background="@color/white"
+                        android:hint="Full Name"
+                        app:hintAnimationEnabled="true">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editName"
+                            android:layout_width="match_parent"
+                            android:textCursorDrawable="@color/blue_button_clr"
+                            android:layout_height="match_parent"
+                            android:inputType="text" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/edtEmailID"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/edtFullName"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@color/white"
+                        android:hint="Email ID"
+                        app:boxStrokeColor="@color/blue_button_clr"
+                        app:hintAnimationEnabled="true">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editEmailID"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:textCursorDrawable="@color/blue_button_clr"
+                            android:inputType="textEmailAddress" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/edtIdea"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        android:layout_below="@id/edtEmailID"
+                        app:boxStrokeColor="@color/blue_button_clr"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@color/white"
+                        app:hintAnimationEnabled="true">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editIdeaDescription"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:maxLines="10"
+                            android:hint="Describe your Idea..."
+                            android:gravity="top|start"
+                            android:textCursorDrawable="@color/blue_button_clr"
+                            android:inputType="text" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/btnSubmit"
+                        android:layout_width="150dp"
+                        android:layout_height="45dp"
+                        android:layout_below="@+id/edtIdea"
+                        android:layout_marginTop="14dp"
+                        android:layout_marginBottom="20dp"
+                        android:elevation="5dp"
+                        android:layout_centerInParent="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        app:cardCornerRadius="24dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/blue_button_clr"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/poppins_bold"
+                                android:gravity="center"
+                                android:text="Submit"
+                                android:textColor="@color/white"
+                                android:textSize="16.5sp" />
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+
+        </RelativeLayout>
+
+
+
+
+
+
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

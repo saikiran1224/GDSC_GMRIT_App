@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -28,10 +29,14 @@ import com.tbuonomo.viewpagerdotsindicator.DotsIndicator
 import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
 
 import androidx.viewpager.widget.ViewPager
-import com.gmrit.gdsc.activities.general.LearnAndroidDevActivity
-import com.gmrit.gdsc.activities.general.LearnProgrammingActivity
-import com.gmrit.gdsc.activities.general.LearnUIUXActivity
-import com.gmrit.gdsc.activities.general.LearnWebDevActivity
+import com.bumptech.glide.load.ImageHeaderParser
+import com.gmrit.gdsc.activities.general.*
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
+import com.google.firebase.storage.ktx.storage
+import org.imaginativeworld.whynotimagecarousel.ImageCarousel
+import org.imaginativeworld.whynotimagecarousel.model.CarouselItem
 import java.lang.IllegalArgumentException
 import java.lang.reflect.Field
 import java.util.*
@@ -45,7 +50,7 @@ class ExploreFragment : Fragment() {
 
     lateinit var bannersViewPager2: ViewPager2
     lateinit var bannersAdapter: BannersAdapter
-    lateinit var eventsDataList: ArrayList<BannerData>
+    lateinit var bannersDataList: ArrayList<BannerData>
     lateinit var dotsIndicator: WormDotsIndicator
 
     lateinit var recyclerUpcomingEvents: RecyclerView
@@ -62,9 +67,20 @@ class ExploreFragment : Fragment() {
     lateinit var imageLearnProgrammingDev: ImageView
     lateinit var imageLearnAndroidDev: ImageView
 
+    // Share your Idea
+    lateinit var btnShareYourIdea: ImageView
+
+    // Navigation
+    lateinit var iconMenu: ImageView
+
+    lateinit var firebaseStorage: FirebaseStorage
+    lateinit var storageRef: StorageReference
+
     private var TIME_LIMIT by Delegates.notNull<Long>()
 
     lateinit var swipeTimer: Timer
+
+    lateinit var carousel: ImageCarousel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -87,11 +103,24 @@ class ExploreFragment : Fragment() {
             txtStudentName.text = AppPreferences.studentName
         }
 
-        bannersViewPager2 = view.findViewById(R.id.bannersViewPager)
-        eventsDataList = ArrayList<BannerData>()
+        //bannersViewPager2 = view.findViewById(R.id.bannersViewPager)
+        bannersDataList = ArrayList<BannerData>()
+
+        swipeTimer = Timer()
+        TIME_LIMIT = 2000
+
+        // Create a storage reference from our app
+        // Firebase Storage
+        firebaseStorage = Firebase.storage
+        storageRef = firebaseStorage.reference
+
 
         // Dots Indicator
         dotsIndicator = view.findViewById<WormDotsIndicator>(R.id.dots_indicator)
+
+        carousel = view.findViewById(R.id.carousel)
+        carousel.registerLifecycle(lifecycle)
+
 
         recyclerUpcomingEvents = view.findViewById(R.id.upcomingRecycler)
         upcomingEventsList = ArrayList()
@@ -104,6 +133,25 @@ class ExploreFragment : Fragment() {
         imageLearnAndroidDev = view.findViewById(R.id.imageLearnAndroidDev)
         imageLearnProgrammingDev = view.findViewById(R.id.imageLearnProgrammingDev)
         imageLearnUIUXDev = view.findViewById(R.id.imageLearnUIUXDev)
+
+        // Share your Idea
+        btnShareYourIdea = view.findViewById(R.id.btnShareYourIdea)
+
+        // Navigation Related
+        iconMenu = view.findViewById(R.id.iconMenu)
+
+
+
+        iconMenu.setOnClickListener {
+            val intent = Intent(context, NavigationActivity::class.java)
+            startActivity(intent)
+        }
+
+
+        btnShareYourIdea.setOnClickListener {
+            val intent = Intent(context, ShareYourIdeaActivity::class.java)
+            startActivity(intent)
+        }
 
         imageLearnWebDev.setOnClickListener {
             val intent = Intent(context, LearnWebDevActivity::class.java)
@@ -125,11 +173,7 @@ class ExploreFragment : Fragment() {
             startActivity(intent)
         }
 
-
-
-
         loadBannersData()
-
 
         // For UpcomingEvents RecyclerView
         upcomingEventsList.add(UpcomingEventData("Android Study Jams","Keep yourself updated with the new launch", "Find New Experience","Get new experience with GDSC App", R.drawable.kotlin_icon))
@@ -158,20 +202,58 @@ class ExploreFragment : Fragment() {
 
     private fun loadBannersData() {
 
-        // For Banners ViewPager
-        eventsDataList.add(BannerData("Find New Experience", "Get New Experience with GDSC App", R.drawable.find_new_exp))
-        eventsDataList.add(BannerData("Find New Experience", "Get New Experience with GDSC App", R.drawable.find_new_exp))
-        eventsDataList.add(BannerData("Find New Experience", "Get New Experience with GDSC App", R.drawable.find_new_exp))
+        val list = mutableListOf<CarouselItem>()
 
-        bannersAdapter = context?.let { BannersAdapter(it, eventsDataList) }!!
+        // Create a child reference
+// imagesRef now points to "images"
+        val imagesRef: StorageReference = storageRef.child("intro_posters")
+        val imageRef: StorageReference = storageRef
 
-        bannersViewPager2.adapter = bannersAdapter
-        bannersViewPager2.orientation = ViewPager2.ORIENTATION_HORIZONTAL
-        bannersViewPager2.offscreenPageLimit = 2
+        list.add(CarouselItem("https://firebasestorage.googleapis.com/v0/b/gdsc-gmrit.appspot.com/o/intro_posters%2F3.png?alt=media&token=81024419-c30d-42eb-907d-54e8f3d803eb"))
 
-        startViewPagerScrolling()
 
-        dotsIndicator.setViewPager2(viewPager2 = bannersViewPager2)
+        imagesRef.listAll().addOnSuccessListener {
+
+            list.clear()
+            for (item in it.items) {
+                imageRef.child(item.path).downloadUrl.addOnSuccessListener { it ->
+                    // For Banners ViewPager
+                    Log.d("TAG",it.toString())
+                    list.add(CarouselItem(it.toString()))
+                    //list.add(CarouselItem("https://firebasestorage.googleapis.com/v0/b/gdsc-gmrit.appspot.com/o/intro_posters%2F3.png?alt=media&token=81024419-c30d-42eb-907d-54e8f3d803eb"))
+                    //bannersDataList.add(BannerData(item.name, it.toString()))
+                    carousel.setData(list)
+                }
+            }
+
+            Log.d("TAG","hello "+list.toString())
+            //carousel.setData(list)
+
+            //Log.d("AL",bannersDataList.toString())
+
+
+
+
+
+
+
+           // ViewPager used to Load Banners
+           /* bannersAdapter = BannersAdapter(context!!,bannersDataList)
+
+            bannersViewPager2.adapter = bannersAdapter
+            bannersViewPager2.orientation = ViewPager2.ORIENTATION_HORIZONTAL
+            bannersViewPager2.offscreenPageLimit = 2
+
+            startViewPagerScrolling()
+
+            dotsIndicator.setViewPager2(viewPager2 = bannersViewPager2)*/
+
+
+        }.addOnFailureListener {
+            Toast.makeText(context,it.message,Toast.LENGTH_LONG).show()
+        }
+
+
     }
 
     fun startViewPagerScrolling() {
@@ -179,7 +261,7 @@ class ExploreFragment : Fragment() {
         var currentPage = 0
         var NUM_PAGES = 3
 
-        NUM_PAGES = eventsDataList.size
+       // NUM_PAGES = bannersDataList.size
 
         // Auto start of viewpager
         val handler = Handler()
@@ -191,7 +273,7 @@ class ExploreFragment : Fragment() {
         }
 
 
-       swipeTimer = Timer()
+
         swipeTimer.schedule(object : TimerTask() {
             override fun run() {
                 handler.post(Update)

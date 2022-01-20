@@ -12,6 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GDSCGMRIT">
         <activity
+            android:name=".activities.general.OurTeamActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.general.StudentProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.general.NavigationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.general.ShareYourIdeaActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.general.EventProfileActivity"
             android:exported="false" />
         <activity

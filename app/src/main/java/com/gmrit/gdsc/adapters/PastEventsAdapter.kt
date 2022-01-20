@@ -28,10 +28,10 @@ class PastEventsAdapter(private val context: Context, private val pastEventsList
         holder.eventTitle.text = pastEventsList[position].eventTitle
         holder.eventDescription.text = pastEventsList[position].eventDesc
 
-        holder.bannerTitle.text = pastEventsList[position].bannerTitle
+       /* holder.bannerTitle.text = pastEventsList[position].bannerTitle
         holder.bannerDescription.text = pastEventsList[position].bannerDesc
         holder.bannerImage.setImageResource(pastEventsList[position].bannerIcon)
-
+*/
         holder.btnKnowMore.setOnClickListener {
             val intent = Intent(context, EventProfileActivity::class.java)
             context.startActivity(intent)
@@ -48,9 +48,10 @@ class PastEventsAdapter(private val context: Context, private val pastEventsList
 
         val eventTitle = itemView.findViewById<TextView>(R.id.eventTitle)
         val eventDescription = itemView.findViewById<TextView>(R.id.eventDescription)
-        val bannerTitle = itemView.findViewById<TextView>(R.id.bannerTitle)
+
+        /*val bannerTitle = itemView.findViewById<TextView>(R.id.bannerTitle)
         val bannerDescription = itemView.findViewById<TextView>(R.id.bannerDescription)
-        val bannerImage = itemView.findViewById<ImageView>(R.id.bannerIcon)
+        val bannerImage = itemView.findViewById<ImageView>(R.id.bannerIcon)*/
 
         val btnKnowMore = itemView.findViewById<CardView>(R.id.btnKnowMore)
 

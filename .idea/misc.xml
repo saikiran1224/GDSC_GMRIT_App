@@ -7,6 +7,9 @@
         <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/drawable-v24/sides_rounded_circle.xml" value="0.199609375" />
         <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/drawable/background_gradient.xml" value="0.199609375" />
         <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/drawable/bottom_nav_tab_background.xml" value="0.199609375" />
+        <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/drawable/full_round_circle.xml" value="0.199609375" />
+        <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/drawable/idea_background.xml" value="0.199609375" />
+        <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/drawable/rounded_textview.xml" value="0.199609375" />
         <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/drawable/top_rounded_circle.xml" value="0.199609375" />
         <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/layout/activity_event_profile.xml" value="0.2" />
         <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/layout/activity_home_fragments.xml" value="0.1875" />
@@ -16,20 +19,25 @@
         <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/layout/activity_learn_web_dev.xml" value="0.176953125" />
         <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/layout/activity_main2.xml" value="0.1875" />
+        <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/layout/activity_navigation.xml" value="0.1875" />
         <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/layout/activity_on_boarding.xml" value="0.1875" />
         <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/layout/activity_on_boarding1.xml" value="0.2" />
         <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/layout/activity_on_boarding2.xml" value="0.1875" />
         <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/layout/activity_on_boarding3.xml" value="0.1875" />
+        <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/layout/activity_our_team.xml" value="0.1875" />
+        <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/layout/activity_share_your_idea.xml" value="0.1875" />
         <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/layout/activity_sign_up.xml" value="0.1875" />
         <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/layout/activity_splash_screen.xml" value="0.2" />
+        <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/layout/activity_student_profile.xml" value="0.1875" />
         <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/layout/activity_welcome.xml" value="0.1875" />
         <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/layout/fragment_completed.xml" value="0.176953125" />
-        <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/layout/fragment_explore.xml" value="0.17527173913043478" />
+        <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/layout/fragment_explore.xml" value="0.264" />
         <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/layout/fragment_my_events.xml" value="0.1875" />
         <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/layout/fragment_on_going.xml" value="0.1875" />
         <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/layout/fragment_screen_slide.xml" value="0.1875" />
         <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/layout/layout_banner_display.xml" value="0.1875" />
         <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/layout/layout_event_display.xml" value="0.2" />
+        <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/layout/layout_team_card.xml" value="0.1875" />
         <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/layout/onboarding_slide_layout.xml" value="0.1875" />
         <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/layout/sign_in_bottom_sheet.xml" value="0.1875" />
         <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.1875" />

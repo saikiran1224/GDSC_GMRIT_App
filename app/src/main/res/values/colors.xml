@@ -24,4 +24,10 @@
     <color name="android_dev">#ffbd7f</color>
     <color name="uiux_dev">#53bcad</color>
     <color name="programming_dev">#8d93ef</color>
+
+    <color name="light_light_blue">#e8efff</color>
+    <color name="navigation_dark_blue">#0f2e9a</color>
+
+    <color name="idea_orange">#ffad60</color>
+    <color name="ide_blue">#5b72d8</color>
 </resources>

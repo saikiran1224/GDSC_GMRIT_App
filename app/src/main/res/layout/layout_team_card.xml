@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="22dp"
+    android:layout_margin="10dp"
+    app:cardElevation="8dp"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:id="@+id/coverImage"
+            android:scaleType="centerCrop"
+            android:src="@drawable/saikiran" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:id="@+id/imageLayout"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imageTeamMember"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="18dp"
+                android:paddingTop="5dp"
+                android:src="@drawable/sai_kiran_pic" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/txtTeamMemberName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imageLayout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Sai Kiran Kopparthi"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/txtTeamMemberRole"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtTeamMemberName"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="-2dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="GDSC Lead"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/txtAboutTeamMember"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtTeamMemberRole"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="@font/poppins"
+            android:gravity="center"
+            android:maxLines="2"
+            android:text="Lorem Ipsum Dorem Lorem Poss Dorem Rrfsgg Lorem Dorem Ipsum Dorem Lorem Poss "
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/txtKnowMore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtAboutTeamMember"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="3dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Know more"
+            android:textSize="12sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtKnowMore"
+            android:layout_marginBottom="5dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iconInstagram"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_margin="5dp"
+                android:src="@drawable/instagram" />
+
+            <ImageView
+                android:id="@+id/iconLinkedin"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_margin="5dp"
+                android:src="@drawable/linkedin" />
+
+
+            <ImageView
+                android:id="@+id/iconGitHub"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_margin="5dp"
+                android:src="@drawable/github" />
+
+
+        </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>
