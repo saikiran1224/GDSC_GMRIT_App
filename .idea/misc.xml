@@ -9,6 +9,7 @@
         <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/drawable/bottom_nav_tab_background.xml" value="0.199609375" />
         <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/drawable/full_round_circle.xml" value="0.199609375" />
         <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/drawable/idea_background.xml" value="0.199609375" />
+        <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/drawable/join_gdsc_color_bg.xml" value="0.199609375" />
         <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/drawable/rounded_textview.xml" value="0.199609375" />
         <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/drawable/top_rounded_circle.xml" value="0.199609375" />
         <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/layout/activity_event_profile.xml" value="0.2" />
@@ -31,7 +32,7 @@
         <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/layout/activity_student_profile.xml" value="0.1875" />
         <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/layout/activity_welcome.xml" value="0.1875" />
         <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/layout/fragment_completed.xml" value="0.176953125" />
-        <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/layout/fragment_explore.xml" value="0.264" />
+        <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/layout/fragment_explore.xml" value="0.2" />
         <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/layout/fragment_my_events.xml" value="0.1875" />
         <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/layout/fragment_on_going.xml" value="0.1875" />
         <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/layout/fragment_screen_slide.xml" value="0.1875" />

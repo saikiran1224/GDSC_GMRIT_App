@@ -12,16 +12,17 @@
         android:layout_height="match_parent">
 
         <ImageView
+            android:id="@+id/closeIcon"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
-            android:layout_alignParentTop="true"
-            android:id="@+id/closeIcon"
-            app:tint="@color/navigation_dark_blue"
+            android:contentDescription="@string/app_name"
             android:src="@drawable/ic_baseline_close_24"
-            android:contentDescription="@string/app_name" />
+            app:tint="@color/navigation_dark_blue" />
 
         <TextView
             android:id="@+id/txtProfileShortName"

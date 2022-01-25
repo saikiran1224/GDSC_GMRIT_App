@@ -143,17 +143,66 @@
             app:selectedDotColor="#2f2e41" />
 
 
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:layout_below="@id/constraintLayout"
+            android:id="@+id/joinCommunity"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:foreground="?attr/selectableItemBackground"
+            android:clickable="true"
+            app:cardCornerRadius="15dp"
+            android:layout_marginTop="25dp"
+            android:focusable="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:background="@drawable/join_gdsc_color_bg"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_toEndOf="@id/gdsc_logo"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Join our GDSC Community by just \nClicking here >>>"
+                    android:textColor="#244393"
+                    android:textSize="14.5sp" />
+
+                <ImageView
+                    android:id="@+id/gdsc_logo"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/gdsc_logo" />
+
+
+
+
+            </RelativeLayout>
+
+
+
+        </androidx.cardview.widget.CardView>
+
+
 
         <!--Start of Upcoming Layout-->
-
         <TextView
             android:id="@+id/txtUpcoming"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/constraintLayout"
+            android:layout_below="@id/joinCommunity"
             android:layout_alignParentStart="true"
             android:layout_marginStart="11dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="30dp"
             android:fontFamily="@font/poppins_bold"
             android:text="Upcoming"
             android:textColor="@color/text_grey"

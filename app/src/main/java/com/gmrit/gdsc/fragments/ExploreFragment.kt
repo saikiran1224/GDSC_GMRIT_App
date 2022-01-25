@@ -1,6 +1,7 @@
 package com.gmrit.gdsc.fragments
 
-import android.content.Context
+import android.annotation.SuppressLint
+import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
@@ -9,8 +10,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.AccelerateInterpolator
-import android.view.animation.Interpolator
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -19,26 +18,24 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.gmrit.gdsc.R
 import com.gmrit.gdsc.adapters.BannersAdapter
-import com.gmrit.gdsc.adapters.PastEventsAdapter
+import com.gmrit.gdsc.adapters.EventsAdapter
 import com.gmrit.gdsc.adapters.UpcomingEventsAdapter
 import com.gmrit.gdsc.models.BannerData
-import com.gmrit.gdsc.models.PastEventData
 import com.gmrit.gdsc.models.UpcomingEventData
 import com.gmrit.gdsc.utils.AppPreferences
-import com.tbuonomo.viewpagerdotsindicator.DotsIndicator
 import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
 
-import androidx.viewpager.widget.ViewPager
-import com.bumptech.glide.load.ImageHeaderParser
 import com.gmrit.gdsc.activities.general.*
+import com.gmrit.gdsc.models.EventDetailsData
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.ktx.storage
 import org.imaginativeworld.whynotimagecarousel.ImageCarousel
 import org.imaginativeworld.whynotimagecarousel.model.CarouselItem
-import java.lang.IllegalArgumentException
-import java.lang.reflect.Field
+import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.properties.Delegates
@@ -54,12 +51,13 @@ class ExploreFragment : Fragment() {
     lateinit var dotsIndicator: WormDotsIndicator
 
     lateinit var recyclerUpcomingEvents: RecyclerView
-    lateinit var upcomingEventsAdapter: UpcomingEventsAdapter
-    lateinit var upcomingEventsList: ArrayList<UpcomingEventData>
-
     lateinit var recyclerPastEvents: RecyclerView
-    lateinit var pastEventsAdapter: PastEventsAdapter
-    lateinit var pastEventsList: ArrayList<PastEventData>
+
+    lateinit var upcomingEventsAdapter: EventsAdapter
+    lateinit var pastEventsAdapter: EventsAdapter
+
+    lateinit var pastEventsList: ArrayList<EventDetailsData>
+    lateinit var upcomingEventsList: ArrayList<EventDetailsData>
 
     // See your Interest
     lateinit var imageLearnWebDev: ImageView
@@ -81,6 +79,8 @@ class ExploreFragment : Fragment() {
     lateinit var swipeTimer: Timer
 
     lateinit var carousel: ImageCarousel
+
+    lateinit var eventDetailsList: ArrayList<EventDetailsData>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -105,6 +105,8 @@ class ExploreFragment : Fragment() {
 
         //bannersViewPager2 = view.findViewById(R.id.bannersViewPager)
         bannersDataList = ArrayList<BannerData>()
+
+        eventDetailsList = ArrayList()
 
         swipeTimer = Timer()
         TIME_LIMIT = 2000
@@ -140,11 +142,10 @@ class ExploreFragment : Fragment() {
         // Navigation Related
         iconMenu = view.findViewById(R.id.iconMenu)
 
-
-
         iconMenu.setOnClickListener {
             val intent = Intent(context, NavigationActivity::class.java)
             startActivity(intent)
+            requireActivity().overridePendingTransition(R.anim.left_to_right,R.anim.right_to_left)
         }
 
 
@@ -173,31 +174,72 @@ class ExploreFragment : Fragment() {
             startActivity(intent)
         }
 
+        // Loading the Banners Data
         loadBannersData()
 
-        // For UpcomingEvents RecyclerView
-        upcomingEventsList.add(UpcomingEventData("Android Study Jams","Keep yourself updated with the new launch", "Find New Experience","Get new experience with GDSC App", R.drawable.kotlin_icon))
-        upcomingEventsList.add(UpcomingEventData("Android Study Jams","Keep yourself updated with the new launch", "Find New Experience","Get new experience with GDSC App", R.drawable.kotlin_icon))
-        upcomingEventsList.add(UpcomingEventData("Android Study Jams","Keep yourself updated with the new launch", "Find New Experience","Get new experience with GDSC App", R.drawable.kotlin_icon))
-
-        upcomingEventsAdapter = UpcomingEventsAdapter(requireContext(), upcomingEventsList)
-        recyclerUpcomingEvents.adapter = upcomingEventsAdapter
-        recyclerUpcomingEvents.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        recyclerUpcomingEvents.setHasFixedSize(true)
-
-
-        // For PastEvents Recycler View
-        pastEventsList.add(PastEventData("Android Study Jams","Keep yourself updated with the new launch", "Find New Experience","Get new experience with GDSC App", R.drawable.kotlin_icon))
-        pastEventsList.add(PastEventData("Android Study Jams","Keep yourself updated with the new launch", "Find New Experience","Get new experience with GDSC App", R.drawable.kotlin_icon))
-        pastEventsList.add(PastEventData("Android Study Jams","Keep yourself updated with the new launch", "Find New Experience","Get new experience with GDSC App", R.drawable.kotlin_icon))
-
-        pastEventsAdapter = PastEventsAdapter(requireContext(), pastEventsList)
-        recyclerPastEvents.adapter = pastEventsAdapter
-        recyclerPastEvents.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        recyclerPastEvents.setHasFixedSize(true)
+        // Loading Events Data
+        loadEventDetailsData()
 
 
         return view
+    }
+
+    @SuppressLint("SimpleDateFormat")
+    private fun loadEventDetailsData() {
+
+        val db = Firebase.firestore
+
+        db.collection("Events_Data")
+            .addSnapshotListener { value, e ->
+
+                if (e != null) {
+                    Log.w(TAG, "Listen failed.", e)
+                    Toast.makeText(context,e.localizedMessage,Toast.LENGTH_LONG).show()
+                    return@addSnapshotListener
+                }
+
+                for(doc in value!!) {
+                    // adding each document into eventDetailsList
+                    eventDetailsList.add(doc.toObject<EventDetailsData>())
+                }
+
+                Log.d("TAG",""+eventDetailsList.toString())
+
+                // Retrieving Current Date
+                val simpleDateFormat = SimpleDateFormat("dd/MM/yyyy")
+                val  date: String = simpleDateFormat.format(Date())
+                val currentDate: Date = simpleDateFormat.parse(date)!!
+
+                // Separate Events using the parameter of Current Date into UpcomingEventsList and PastEventsList
+                for(event in eventDetailsList) {
+
+                    val eventDate: Date = simpleDateFormat.parse(event.eventDate)!!
+
+                    if (eventDate.before(currentDate))
+                        pastEventsList.add(event)
+                    else if (eventDate.after(currentDate))
+                        upcomingEventsList.add(event)
+                    else {
+                        // If the event date is today, then add to Upcoming Events List
+                        upcomingEventsList.add(event)
+                    }
+
+                }
+
+
+                // Initialising RecyclerViews and Adapters
+                pastEventsAdapter = EventsAdapter(requireContext(), pastEventsList)
+                recyclerPastEvents.adapter = pastEventsAdapter
+                recyclerPastEvents.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+                recyclerPastEvents.setHasFixedSize(true)
+
+                upcomingEventsAdapter = EventsAdapter(requireContext(),upcomingEventsList)
+                recyclerUpcomingEvents.adapter = upcomingEventsAdapter
+                recyclerUpcomingEvents.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+                recyclerUpcomingEvents.setHasFixedSize(true)
+
+
+            }
     }
 
     private fun loadBannersData() {
@@ -205,12 +247,9 @@ class ExploreFragment : Fragment() {
         val list = mutableListOf<CarouselItem>()
 
         // Create a child reference
-// imagesRef now points to "images"
+        // imagesRef now points to "images"
         val imagesRef: StorageReference = storageRef.child("intro_posters")
         val imageRef: StorageReference = storageRef
-
-        list.add(CarouselItem("https://firebasestorage.googleapis.com/v0/b/gdsc-gmrit.appspot.com/o/intro_posters%2F3.png?alt=media&token=81024419-c30d-42eb-907d-54e8f3d803eb"))
-
 
         imagesRef.listAll().addOnSuccessListener {
 
@@ -220,22 +259,13 @@ class ExploreFragment : Fragment() {
                     // For Banners ViewPager
                     Log.d("TAG",it.toString())
                     list.add(CarouselItem(it.toString()))
-                    //list.add(CarouselItem("https://firebasestorage.googleapis.com/v0/b/gdsc-gmrit.appspot.com/o/intro_posters%2F3.png?alt=media&token=81024419-c30d-42eb-907d-54e8f3d803eb"))
-                    //bannersDataList.add(BannerData(item.name, it.toString()))
+
                     carousel.setData(list)
                 }
             }
 
-            Log.d("TAG","hello "+list.toString())
-            //carousel.setData(list)
 
             //Log.d("AL",bannersDataList.toString())
-
-
-
-
-
-
 
            // ViewPager used to Load Banners
            /* bannersAdapter = BannersAdapter(context!!,bannersDataList)

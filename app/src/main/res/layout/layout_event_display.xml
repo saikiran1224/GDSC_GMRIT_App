@@ -29,6 +29,8 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:id="@+id/eventPosterImage"
                 android:src="@drawable/poster_template"
                 />
 
@@ -80,10 +82,6 @@
                     android:scaleType="centerCrop"
                     android:src="@drawable/kotlin_icon" />
 
-
-
-
-
             </RelativeLayout>
 -->
 
@@ -96,7 +94,7 @@
 
         <TextView
             android:id="@+id/eventTitle"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/card_layout"
             android:layout_marginStart="12dp"
@@ -111,6 +109,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/eventTitle"
             android:layout_marginStart="12dp"
+            android:gravity="start"
             android:layout_marginEnd="5dp"
             android:layout_toStartOf="@id/btnKnowMore"
             android:fontFamily="@font/poppins_medium"
@@ -122,8 +121,8 @@
             android:layout_width="100dp"
             android:layout_alignParentEnd="true"
             android:layout_height="35dp"
-            android:layout_below="@+id/card_layout"
-            android:layout_marginTop="25dp"
+            android:layout_below="@+id/eventTitle"
+            android:layout_marginTop="5dp"
             android:layout_marginEnd="8dp"
             android:elevation="5dp"
             android:layout_centerInParent="true"
@@ -134,7 +133,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="#5b72d8"
-                android:gravity="center"
+                android:gravity="center_vertical"
                 android:orientation="vertical">
 
                 <TextView

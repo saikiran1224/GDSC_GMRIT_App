@@ -33,23 +33,23 @@
                 app:tint="@color/white" />
 
             <TextView
-                android:id="@+id/txtLearn"
+                android:id="@+id/txtEventName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/coverImage"
+                android:layout_centerHorizontal="true"
                 android:layout_marginStart="18dp"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/poppins_bold"
-                android:layout_centerHorizontal="true"
                 android:text="Android Study Jam"
                 android:textColor="#000444"
                 android:textSize="24sp" />
 
             <TextView
-                android:id="@+id/txtWebDevelopment"
+                android:id="@+id/txtEventTagLine"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/txtLearn"
+                android:layout_below="@id/txtEventName"
                 android:layout_centerHorizontal="true"
                 android:layout_marginStart="18dp"
                 android:layout_marginTop="0dp"
@@ -60,10 +60,10 @@
                 android:textSize="13sp" />
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/imageProfilePhoto"
+                android:id="@+id/instructorImage"
                 android:layout_width="58dp"
                 android:layout_height="58dp"
-                android:layout_below="@id/txtWebDevelopment"
+                android:layout_below="@id/txtEventTagLine"
                 android:layout_marginStart="18dp"
                 android:layout_marginTop="18dp"
                 android:paddingTop="5dp"
@@ -73,10 +73,10 @@
                 android:id="@+id/txtFacilitator"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/txtWebDevelopment"
+                android:layout_below="@id/txtEventTagLine"
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="25dp"
-                android:layout_toEndOf="@id/imageProfilePhoto"
+                android:layout_toEndOf="@id/instructorImage"
                 android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_right_24"
                 android:drawableTint="#5b72d8"
                 android:fontFamily="@font/poppins_bold"
@@ -90,7 +90,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtFacilitator"
                 android:layout_marginStart="12dp"
-                android:layout_toEndOf="@id/imageProfilePhoto"
+                android:id="@+id/txtInstructorName"
+                android:layout_toEndOf="@id/instructorImage"
                 android:fontFamily="@font/poppins_bold"
                 android:text="Sai Kiran Kopparthi"
                 android:textColor="#484848"
@@ -100,7 +101,7 @@
                 android:id="@+id/txtAboutTheCourse"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/imageProfilePhoto"
+                android:layout_below="@id/instructorImage"
                 android:layout_marginStart="18dp"
                 android:layout_marginTop="22dp"
                 android:fontFamily="@font/poppins_bold"
@@ -150,12 +151,12 @@
                 android:layout_marginStart="18dp"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/poppins_bold"
-                android:text="Requirements"
+                android:text="Prerequisites"
                 android:textColor="#484848"
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/txtDescRequirements"
+                android:id="@+id/txtDescPrerequisites"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtRequirements"
@@ -178,7 +179,7 @@
         android:layout_height="wrap_content">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/btnNext"
+            android:id="@+id/btnEnrollNow"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:layout_centerHorizontal="true"
