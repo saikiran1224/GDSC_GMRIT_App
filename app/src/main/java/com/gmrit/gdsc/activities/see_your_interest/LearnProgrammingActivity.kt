@@ -1,4 +1,4 @@
-package com.gmrit.gdsc.activities.general
+package com.gmrit.gdsc.activities.see_your_interest
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

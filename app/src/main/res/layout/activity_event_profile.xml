@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.general.LearnProgrammingActivity">
+    tools:context=".activities.see_your_interest.LearnProgrammingActivity">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -25,12 +25,12 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_alignParentStart="true"
-                android:padding="1dp"
                 android:layout_alignParentTop="true"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
+                android:padding="1dp"
                 android:src="@drawable/ic_baseline_arrow_back_24"
-                app:tint="@color/white" />
+                app:tint="@color/black" />
 
             <TextView
                 android:id="@+id/txtEventName"
@@ -39,6 +39,7 @@
                 android:layout_below="@id/coverImage"
                 android:layout_centerHorizontal="true"
                 android:layout_marginStart="18dp"
+                android:gravity="center"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/poppins_bold"
                 android:text="Android Study Jam"
@@ -66,7 +67,7 @@
                 android:layout_below="@id/txtEventTagLine"
                 android:layout_marginStart="18dp"
                 android:layout_marginTop="18dp"
-                android:paddingTop="5dp"
+                android:paddingTop="0dp"
                 android:src="@drawable/sai_kiran_pic" />
 
             <TextView
@@ -204,6 +205,7 @@
                     android:fontFamily="@font/poppins_bold"
                     android:gravity="center"
                     android:text="Enroll Now"
+                    android:id="@+id/btnEnrollNowText"
                     android:textColor="@color/white"
                     android:textSize="18.5sp" />
 

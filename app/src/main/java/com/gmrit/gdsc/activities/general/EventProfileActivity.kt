@@ -1,6 +1,8 @@
 package com.gmrit.gdsc.activities.general
 
+import android.annotation.SuppressLint
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -10,12 +12,13 @@ import androidx.cardview.widget.CardView
 import com.bumptech.glide.Glide
 import com.gmrit.gdsc.R
 import org.w3c.dom.Text
+import java.text.SimpleDateFormat
+import java.util.*
 
 class EventProfileActivity : AppCompatActivity() {
 
     lateinit var eventName: String
     lateinit var eventTagLine: String
-    lateinit var eventDate: String
     lateinit var aboutTheEvent: String
     lateinit var eventPosterUrl: String
     lateinit var eventInstructorName: String
@@ -23,6 +26,7 @@ class EventProfileActivity : AppCompatActivity() {
     lateinit var eventPreRequisites: String
     lateinit var thingsYouWillLearn: String
     lateinit var eventRegisterUrl: String
+    lateinit var eventDate: String
 
     // Views
     lateinit var coverImageView: ImageView
@@ -34,8 +38,12 @@ class EventProfileActivity : AppCompatActivity() {
     lateinit var txtThingsYouWillLearn: TextView
     lateinit var txtEventPrerequisites:TextView
 
-    lateinit var btnEnrollNow: CardView
+    var enrollEnabled: Boolean = false
 
+    lateinit var btnEnrollNow: CardView
+    lateinit var btnEnrollNowText: TextView
+
+    @SuppressLint("SimpleDateFormat", "SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -57,6 +65,7 @@ class EventProfileActivity : AppCompatActivity() {
         txtInstructorName = findViewById(R.id.txtInstructorName)
         instructorImageView = findViewById(R.id.instructorImage)
         btnEnrollNow = findViewById(R.id.btnEnrollNow)
+        btnEnrollNowText = findViewById(R.id.btnEnrollNowText)
 
 
         // Retreving the paramters that are received from Intent
@@ -71,8 +80,36 @@ class EventProfileActivity : AppCompatActivity() {
         txtThingsYouWillLearn.text = thingsYouWillLearn
         txtEventPrerequisites.text = eventPreRequisites
 
+        // Retrieving Current Date
+        val simpleDateFormat = SimpleDateFormat("dd/MM/yyyy")
+        val  date: String = simpleDateFormat.format(Date())
+        val currentDate: Date = simpleDateFormat.parse(date)!!
+
+        val event_Date: Date = simpleDateFormat.parse(eventDate)!!
+
+        if (event_Date.before(currentDate))
+            // Past event show EnrollEnabled false
+                enrollEnabled = false
+        else if (event_Date.after(currentDate))
+            // upcoming Event show EnrollEnabled True
+                enrollEnabled = true
+        else {
+            // If the event date is today, then add to Upcoming Events List
+            enrollEnabled = true
+        }
+
+
+        // changing the Button Name based on the enrollEnabled Variable
+        if(enrollEnabled)
+            btnEnrollNowText.text = "Enroll Now"
+        else
+            btnEnrollNowText.text = "View Event"
+
+
         btnEnrollNow.setOnClickListener {
             // Pass Intent to Browser
+            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(eventRegisterUrl))
+            startActivity(browserIntent)
 
         }
 

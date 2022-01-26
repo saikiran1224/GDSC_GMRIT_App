@@ -19,13 +19,15 @@ import androidx.viewpager2.widget.ViewPager2
 import com.gmrit.gdsc.R
 import com.gmrit.gdsc.adapters.BannersAdapter
 import com.gmrit.gdsc.adapters.EventsAdapter
-import com.gmrit.gdsc.adapters.UpcomingEventsAdapter
 import com.gmrit.gdsc.models.BannerData
-import com.gmrit.gdsc.models.UpcomingEventData
 import com.gmrit.gdsc.utils.AppPreferences
 import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
 
 import com.gmrit.gdsc.activities.general.*
+import com.gmrit.gdsc.activities.see_your_interest.LearnAndroidDevActivity
+import com.gmrit.gdsc.activities.see_your_interest.LearnProgrammingActivity
+import com.gmrit.gdsc.activities.see_your_interest.LearnUIUXActivity
+import com.gmrit.gdsc.activities.see_your_interest.LearnWebDevActivity
 import com.gmrit.gdsc.models.EventDetailsData
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
@@ -70,6 +72,7 @@ class ExploreFragment : Fragment() {
 
     // Navigation
     lateinit var iconMenu: ImageView
+    lateinit var iconNotifications: ImageView
 
     lateinit var firebaseStorage: FirebaseStorage
     lateinit var storageRef: StorageReference
@@ -122,6 +125,7 @@ class ExploreFragment : Fragment() {
 
         carousel = view.findViewById(R.id.carousel)
         carousel.registerLifecycle(lifecycle)
+        iconNotifications = view.findViewById(R.id.iconNotifications)
 
 
         recyclerUpcomingEvents = view.findViewById(R.id.upcomingRecycler)
@@ -146,6 +150,11 @@ class ExploreFragment : Fragment() {
             val intent = Intent(context, NavigationActivity::class.java)
             startActivity(intent)
             requireActivity().overridePendingTransition(R.anim.left_to_right,R.anim.right_to_left)
+        }
+
+        iconNotifications.setOnClickListener {
+            val intent = Intent(context, NotificationsActivity::class.java)
+            startActivity(intent)
         }
 
 
