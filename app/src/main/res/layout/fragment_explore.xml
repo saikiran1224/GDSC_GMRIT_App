@@ -161,6 +161,7 @@
                 android:layout_height="match_parent">
 
                 <TextView
+                    android:id="@+id/txtJoinOurGDSC"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -169,7 +170,7 @@
                     android:layout_marginEnd="5dp"
                     android:layout_toEndOf="@id/gdsc_logo"
                     android:fontFamily="@font/poppins_medium"
-                    android:text="Join our GDSC Community by just \nClicking here >>>"
+                    android:text="Join our GDSC Community by just"
                     android:textColor="#244393"
                     android:textSize="14.5sp" />
 
@@ -182,15 +183,36 @@
                     android:layout_marginStart="20dp"
                     android:src="@drawable/gdsc_logo" />
 
+                <TextView
+                    android:id="@+id/txtClickinghere"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtJoinOurGDSC"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="-3dp"
+                    android:layout_toEndOf="@id/gdsc_logo"
+                    android:fontFamily="@font/poppins"
+                    android:text="@string/clicking_here"
+                    android:textColor="#244393"
+                    android:textSize="14.5sp" />
 
-
+                <com.airbnb.lottie.LottieAnimationView
+                    android:layout_width="40dp"
+                    android:layout_height="25dp"
+                    android:scaleType="centerCrop"
+                    app:lottie_loop="true"
+                    android:padding="5dp"
+                    android:layout_marginStart="-6dp"
+                    android:layout_marginTop="-5dp"
+                    app:lottie_autoPlay="true"
+                    app:lottie_rawRes="@raw/arrow_anim"
+                    android:layout_below="@id/txtJoinOurGDSC"
+                    android:layout_toEndOf="@id/txtClickinghere"
+                    />
 
             </RelativeLayout>
 
-
-
         </androidx.cardview.widget.CardView>
-
 
 
         <!--Start of Upcoming Layout-->

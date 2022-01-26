@@ -3,8 +3,18 @@ package com.gmrit.gdsc.fragments
 import android.annotation.SuppressLint
 import android.content.ContentValues.TAG
 import android.content.Intent
+import android.content.res.AssetManager
+import android.graphics.Typeface
+import android.graphics.fonts.Font
+import android.graphics.fonts.FontFamily
+import android.graphics.fonts.FontStyle
+import android.os.Build
 import android.os.Bundle
 import android.os.Handler
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.style.StyleSpan
+import android.text.style.UnderlineSpan
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -13,6 +23,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
@@ -41,6 +52,10 @@ import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.properties.Delegates
+import android.text.style.TypefaceSpan
+
+
+
 
 
 class ExploreFragment : Fragment() {
@@ -73,6 +88,9 @@ class ExploreFragment : Fragment() {
     // Navigation
     lateinit var iconMenu: ImageView
     lateinit var iconNotifications: ImageView
+
+    // Join our GDSC Community
+    lateinit var txtJoinOurGDSC: TextView
 
     lateinit var firebaseStorage: FirebaseStorage
     lateinit var storageRef: StorageReference
@@ -111,6 +129,8 @@ class ExploreFragment : Fragment() {
 
         eventDetailsList = ArrayList()
 
+        txtJoinOurGDSC = view.findViewById(R.id.txtJoinOurGDSC)
+
         swipeTimer = Timer()
         TIME_LIMIT = 2000
 
@@ -126,7 +146,6 @@ class ExploreFragment : Fragment() {
         carousel = view.findViewById(R.id.carousel)
         carousel.registerLifecycle(lifecycle)
         iconNotifications = view.findViewById(R.id.iconNotifications)
-
 
         recyclerUpcomingEvents = view.findViewById(R.id.upcomingRecycler)
         upcomingEventsList = ArrayList()
@@ -156,7 +175,6 @@ class ExploreFragment : Fragment() {
             val intent = Intent(context, NotificationsActivity::class.java)
             startActivity(intent)
         }
-
 
         btnShareYourIdea.setOnClickListener {
             val intent = Intent(context, ShareYourIdeaActivity::class.java)

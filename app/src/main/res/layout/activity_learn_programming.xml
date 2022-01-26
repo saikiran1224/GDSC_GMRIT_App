@@ -80,7 +80,7 @@
                 android:layout_marginStart="12dp"
                 android:layout_toEndOf="@id/imageProfilePhoto"
                 android:fontFamily="@font/poppins_bold"
-                android:text="Yeswanth Choudari"
+                android:text="Aravind Vinjamuri"
                 android:textColor="#484848"
                 android:textSize="13sp" />
 
@@ -91,6 +91,7 @@
                 android:layout_below="@id/imageProfilePhoto"
                 android:layout_marginStart="18dp"
                 android:layout_marginTop="22dp"
+                android:visibility="gone"
                 android:fontFamily="@font/poppins_bold"
                 android:text="About the Course"
                 android:textColor="#484848"
@@ -99,6 +100,7 @@
             <TextView
                 android:id="@+id/txtDescAbout"
                 android:layout_width="match_parent"
+                android:visibility="gone"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtAboutTheCourse"
                 android:layout_marginStart="18dp"
@@ -112,6 +114,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtDescAbout"
+                android:visibility="gone"
                 android:layout_marginStart="18dp"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/poppins_bold"
@@ -126,6 +129,7 @@
                 android:layout_below="@id/txtThingsyouWillLearn"
                 android:layout_marginStart="18dp"
                 android:layout_marginEnd="5dp"
+                android:visibility="gone"
                 android:textSize="13sp"
                 android:fontFamily="@font/poppins"
                 android:text="Lorem Ipsum Ipsum Lorem Lorem Ipsum Ipsum Lorem Lorem Ipsum Ipsum Lorem Lorem Ipsum Ipsum Lorem Lorem Ipsum Ipsum Lorem Lorem Ipsum Ipsum Lorem Ipsum" />
@@ -134,6 +138,7 @@
             <TextView
                 android:id="@+id/txtRequirements"
                 android:layout_width="wrap_content"
+                android:visibility="gone"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtDescThings"
                 android:layout_marginStart="18dp"
@@ -152,8 +157,23 @@
                 android:layout_marginEnd="5dp"
                 android:layout_marginBottom="80dp"
                 android:fontFamily="@font/poppins"
+                android:visibility="gone"
                 android:textSize="13sp"
                 android:text="Lorem Ipsum Ipsum Lorem Lorem Ipsum Ipsum Lorem Lorem Ipsum Ipsum Lorem Lorem Ipsum Ipsum Lorem Lorem Ipsum Ipsum Lorem Lorem Ipsum Ipsum Lorem Ipsum" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_below="@id/imageProfilePhoto"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="150dp"
+                android:scaleType="centerCrop"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/programming_dev" />
+
+
 
         </RelativeLayout>
 
@@ -181,7 +201,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#5b72d8"
+                android:background="#e9e9e9"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -192,7 +212,7 @@
                     android:fontFamily="@font/poppins_bold"
                     android:gravity="center"
                     android:text="Enroll Now"
-                    android:textColor="@color/white"
+                    android:textColor="#494949"
                     android:textSize="18.5sp" />
 
             </LinearLayout>
