@@ -31,6 +31,7 @@
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
                 android:id="@+id/eventPosterImage"
+                android:contentDescription="@string/app_name"
                 android:src="@drawable/poster_template"
                 />
 

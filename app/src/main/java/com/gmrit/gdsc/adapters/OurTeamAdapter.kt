@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.gmrit.gdsc.R
 import com.gmrit.gdsc.models.BannerData
 import com.gmrit.gdsc.models.TeamMemberData
@@ -24,7 +25,7 @@ class OurTeamAdapter(private val context: Context, private val teamMembersList: 
     @SuppressLint("UseCompatLoadingForDrawables")
     override fun onBindViewHolder(holder: OurTeamAdapter.ViewHolder, position: Int) {
 
-        holder.memPhotoUrl.setImageDrawable(context.getDrawable(teamMembersList[position].memPhotUrl))
+        Glide.with(context).load(teamMembersList[position].memPhotUrl).into(holder.memPhotoUrl)
 
         holder.memName.text = teamMembersList[position].memName
         holder.memRole.text = teamMembersList[position].memRole
@@ -35,7 +36,8 @@ class OurTeamAdapter(private val context: Context, private val teamMembersList: 
         holder.memGitUrl.contentDescription = "GitHub"
         holder.memLinkedinUrl.contentDescription = "LinkedIn"
 
-        holder.coverImageUrl.setImageDrawable(context.getDrawable(teamMembersList[position].coverImagerUrl))
+
+       holder.coverImageUrl.setImageDrawable(context.getDrawable(teamMembersList[position].coverImagerUrl))
 
     }
 

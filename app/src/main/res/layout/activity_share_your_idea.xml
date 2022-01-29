@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:id="@+id/relativeLayout"
     android:layout_height="match_parent"
     tools:context=".activities.general.ShareYourIdeaActivity">
 
@@ -21,16 +22,28 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <ImageView
+                android:id="@+id/backButtonIcon"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/full_round_circle"
+                android:backgroundTint="@color/white"
+                android:padding="6dp"
+                android:src="@drawable/ic_baseline_arrow_back_24"
+                app:tint="@color/blue_button_clr" />
+
             <TextView
                 android:id="@+id/txtHaveAnIdea"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="45dp"
+                android:layout_marginTop="60dp"
                 android:fontFamily="@font/poppins_bold"
-                android:paddingEnd="18dp"
                 android:gravity="center"
                 android:paddingStart="18dp"
+                android:paddingEnd="18dp"
                 android:text="Have an idea! share with us"
                 android:textColor="@color/white"
                 android:textSize="22sp" />
@@ -82,6 +95,7 @@
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/editName"
                             android:layout_width="match_parent"
+                            android:cursorVisible="true"
                             android:textCursorDrawable="@color/blue_button_clr"
                             android:layout_height="match_parent"
                             android:inputType="text" />
@@ -105,6 +119,7 @@
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/editEmailID"
                             android:layout_width="match_parent"
+                            android:cursorVisible="true"
                             android:layout_height="match_parent"
                             android:textCursorDrawable="@color/blue_button_clr"
                             android:inputType="textEmailAddress" />
@@ -130,6 +145,7 @@
                             android:layout_height="match_parent"
                             android:maxLines="10"
                             android:hint="Describe your Idea..."
+                            android:cursorVisible="true"
                             android:gravity="top|start"
                             android:textCursorDrawable="@color/blue_button_clr"
                             android:inputType="text" />

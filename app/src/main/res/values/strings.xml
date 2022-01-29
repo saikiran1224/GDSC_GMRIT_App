@@ -5,4 +5,14 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="clicking_here"><u>Clicking here</u></string>
+    <string name="enjoy_benefits_on">-------- ENJOY BENEFITS ON --------</string>
+
+    <string name="prathyusha_profile_pic"><![CDATA[https://firebasestorage.googleapis.com/v0/b/gdsc-gmrit.appspot.com/o/Static_Images%2Fkuppili_prathyusha.jpeg?alt=media&token=0581799c-bbd8-4373-bc80-a7ca872c4222]]></string>
+    <string name="pallavi_profile_pic"><![CDATA[https://firebasestorage.googleapis.com/v0/b/gdsc-gmrit.appspot.com/o/Static_Images%2Fpallavi_pareek_CrfKl6z.jpg?alt=media&token=7b73fc18-c42b-4048-ade8-9c2dbf9895f3]]></string>
+    <string name="dr_p_kanchanamala_mam_profile_pic"><![CDATA[https://firebasestorage.googleapis.com/v0/b/gdsc-gmrit.appspot.com/o/Static_Images%2Fkanchanamala_mam.jpeg?alt=media&token=e9ea0711-bcfc-415e-bf44-92f63671d1b2]]></string>
+
+    <string name="saikiran_profile_pic"><![CDATA[https://firebasestorage.googleapis.com/v0/b/gdsc-gmrit.appspot.com/o/Static_Images%2Fsaikiran_kopparthi_E3heAX1.jpeg?alt=media&token=c9866990-707b-427a-b612-fbe97a90645f]]></string>
+    <string name="aravind_profile_pic"><![CDATA[https://firebasestorage.googleapis.com/v0/b/gdsc-gmrit.appspot.com/o/Static_Images%2Faravind_vinjamuri_SrKcXYU.jpg?alt=media&token=33b092ab-dc7e-4b5b-95c4-487a011fbca3]]></string>
+    <string name="yeswanth_profile_pic"><![CDATA[https://firebasestorage.googleapis.com/v0/b/gdsc-gmrit.appspot.com/o/Static_Images%2Fchoudari_yeswanth_hKXe85F.jpg?alt=media&token=621ded78-e291-4226-a6cd-33886fe19ed3]]></string>
+    <string name="vinaysriram_pic"><![CDATA[https://firebasestorage.googleapis.com/v0/b/gdsc-gmrit.appspot.com/o/Static_Images%2Fvinay_sriram_Sw5nUFA.jpg?alt=media&token=5487d5c7-87cf-44d6-8e5f-5f6f86294629]]></string>
 </resources>

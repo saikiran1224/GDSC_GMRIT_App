@@ -2,9 +2,14 @@ package com.gmrit.gdsc.activities.see_your_interest
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageView
+import com.bumptech.glide.Glide
 import com.gmrit.gdsc.R
 
 class LearnAndroidDevActivity : AppCompatActivity() {
+
+    lateinit var imageProfilePhoto: ImageView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         // Hide the status bar.
@@ -14,5 +19,11 @@ class LearnAndroidDevActivity : AppCompatActivity() {
         // status bar is hidden, so hide that too if necessary.
         //actionBar?.hide()
         setContentView(R.layout.activity_learn_android_dev)
+
+        imageProfilePhoto = findViewById(R.id.imageProfilePhoto)
+
+        Glide.with(this).load(getString(R.string.saikiran_profile_pic)).into(imageProfilePhoto)
+
+
     }
 }

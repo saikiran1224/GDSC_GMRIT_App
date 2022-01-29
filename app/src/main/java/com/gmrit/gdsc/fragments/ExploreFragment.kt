@@ -53,9 +53,7 @@ import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.properties.Delegates
 import android.text.style.TypefaceSpan
-
-
-
+import androidx.cardview.widget.CardView
 
 
 class ExploreFragment : Fragment() {
@@ -91,6 +89,7 @@ class ExploreFragment : Fragment() {
 
     // Join our GDSC Community
     lateinit var txtJoinOurGDSC: TextView
+    lateinit var cardJoinGDSC: CardView
 
     lateinit var firebaseStorage: FirebaseStorage
     lateinit var storageRef: StorageReference
@@ -147,6 +146,8 @@ class ExploreFragment : Fragment() {
         carousel.registerLifecycle(lifecycle)
         iconNotifications = view.findViewById(R.id.iconNotifications)
 
+        cardJoinGDSC = view.findViewById(R.id.cardJoinCommunity)
+
         recyclerUpcomingEvents = view.findViewById(R.id.upcomingRecycler)
         upcomingEventsList = ArrayList()
 
@@ -169,6 +170,11 @@ class ExploreFragment : Fragment() {
             val intent = Intent(context, NavigationActivity::class.java)
             startActivity(intent)
             requireActivity().overridePendingTransition(R.anim.left_to_right,R.anim.right_to_left)
+        }
+
+        cardJoinGDSC.setOnClickListener {
+            val intent = Intent(context, JoinGDSCActivity::class.java)
+            startActivity(intent)
         }
 
         iconNotifications.setOnClickListener {
