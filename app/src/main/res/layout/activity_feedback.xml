@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nestedScrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.general.FeedbackActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/headerRelativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@color/light_light_blue">
+
+            <ImageView
+                android:id="@+id/closeIcon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:clickable="true"
+                android:contentDescription="@string/app_name"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_baseline_arrow_back_24"
+                app:tint="@color/navigation_dark_blue" />
+
+            <TextView
+                android:id="@+id/txtFeedback"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="26dp"
+                android:layout_toEndOf="@id/closeIcon"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Feedback"
+                android:textColor="#1b207b"
+                android:textSize="23sp" />
+
+        </RelativeLayout>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            app:lottie_autoPlay="true"
+            android:layout_marginTop="50dp"
+            android:layout_margin="15dp"
+            android:id="@+id/animationLottie"
+            app:lottie_loop="true"
+            android:layout_below="@id/headerRelativeLayout"
+            app:lottie_url="https://assets2.lottiefiles.com/packages/lf20_Jos3jH.json" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edtFeedback"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_below="@id/animationLottie"
+            app:boxStrokeColor="#1b207b"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="-20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/white"
+            app:hintAnimationEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editFeedback"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:maxLines="10"
+                android:hint="Feel free to share your Feedback"
+                android:cursorVisible="true"
+                android:gravity="top|start"
+                android:textCursorDrawable="@color/blue_button_clr"
+                android:inputType="text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btnSubmit"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/edtFeedback"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="20dp"
+            android:elevation="5dp"
+            android:layout_centerInParent="true"
+            android:foreground="?attr/selectableItemBackground"
+            app:cardCornerRadius="24dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ff8b88"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/poppins_bold"
+                    android:gravity="center"
+                    android:text="Submit"
+                    android:textColor="@color/white"
+                    android:textSize="17sp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+
+
+    </RelativeLayout>
+
+
+</androidx.core.widget.NestedScrollView>

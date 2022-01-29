@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/light_light_blue"
@@ -7,275 +7,262 @@
     android:layout_height="match_parent"
     tools:context=".activities.general.NavigationActivity">
 
-    <RelativeLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <ImageView
-            android:id="@+id/closeIcon"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:foreground="?attr/selectableItemBackgroundBorderless"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:contentDescription="@string/app_name"
-            android:src="@drawable/ic_baseline_close_24"
-            app:tint="@color/navigation_dark_blue" />
-
-        <TextView
-            android:id="@+id/txtProfileShortName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/closeIcon"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/rounded_textview"
-            android:fontFamily="@font/poppins_bold"
-            android:gravity="center"
-            android:text="sk"
-            android:textAllCaps="true"
-            android:textColor="#0f2e9a"
-            android:textSize="38sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/txtStudentName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txtProfileShortName"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="15dp"
-            android:fontFamily="@font/poppins"
-            android:text="Sai Kiran Kopparthi"
-            android:textColor="#244393"
-            android:textSize="17sp" />
-
-        <TextView
-            android:id="@+id/txtViewProfile"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txtStudentName"
-            android:layout_centerHorizontal="true"
-            android:clickable="true"
-            android:foreground="?attr/selectableItemBackgroundBorderless"
-            android:focusable="true"
-            android:layout_marginTop="1dp"
-            android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_right_24"
-            android:fontFamily="@font/poppins_bold"
-            android:gravity="center_vertical"
-            android:text="View Profile"
-            android:textColor="#244393"
-            android:textSize="15sp" />
+        android:layout_height="wrap_content">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/txtViewProfile"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="23dp"
-            android:background="@drawable/top_rounded_circle"
-            android:backgroundTint="@color/white">
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/closeIcon"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="@string/app_name"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_baseline_close_24"
+                app:tint="@color/navigation_dark_blue" />
 
             <TextView
-                android:id="@+id/txtExplore"
-                android:layout_width="match_parent"
+                android:id="@+id/txtProfileShortName"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="25dp"
+                android:layout_below="@id/closeIcon"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/rounded_textview"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="center"
+                android:text="sk"
+                android:textAllCaps="true"
+                android:textColor="#0f2e9a"
+                android:textSize="38sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtStudentName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtProfileShortName"
+                android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"
-                android:layout_marginEnd="22dp"
+                android:fontFamily="@font/poppins"
+                android:text="Sai Kiran Kopparthi"
+                android:textColor="#244393"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/txtViewProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtStudentName"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
                 android:clickable="true"
+                android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_right_24"
+                android:focusable="true"
                 android:fontFamily="@font/poppins_bold"
                 android:foreground="?attr/selectableItemBackgroundBorderless"
                 android:gravity="center_vertical"
-                android:text="Explore"
-                android:textSize="14.5sp"
-                app:drawableEndCompat="@drawable/ic_baseline_keyboard_arrow_right_24_1"
-                app:drawableTint="#5b72d8" />
-
-            <View
-                android:id="@+id/divExplore"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_below="@id/txtExplore"
-                android:layout_marginTop="8dp"
-                android:background="#d9d9d9" />
-
-            <TextView
-                android:id="@+id/txtMyEvents"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/divExplore"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="13dp"
-                android:layout_marginEnd="22dp"
-                android:clickable="true"
-                android:fontFamily="@font/poppins_bold"
-                android:foreground="?attr/selectableItemBackground"
-                android:gravity="center_vertical"
-                android:text="My Events"
-                android:textSize="14.5sp"
-                app:drawableEndCompat="@drawable/ic_baseline_keyboard_arrow_right_24_1"
-                app:drawableTint="#5b72d8" />
-
-            <View
-                android:id="@+id/divEvents"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_below="@id/txtMyEvents"
-                android:layout_marginTop="8dp"
-                android:background="#d9d9d9" />
-
-            <TextView
-                android:id="@+id/txtIdeaSpot"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/divEvents"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="13dp"
-                android:layout_marginEnd="22dp"
-                android:clickable="true"
-                android:fontFamily="@font/poppins_bold"
-                android:foreground="?attr/selectableItemBackground"
-                android:gravity="center_vertical"
-                android:text="Ideaspot"
-                android:textSize="14.5sp"
-                app:drawableEndCompat="@drawable/ic_baseline_keyboard_arrow_right_24_1"
-                app:drawableTint="#5b72d8" />
-
-            <View
-                android:id="@+id/divIdeaspot"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_below="@id/txtIdeaSpot"
-                android:layout_marginTop="8dp"
-                android:background="#d9d9d9" />
-
-            <TextView
-                android:id="@+id/txtOurTeam"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/divIdeaspot"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="13dp"
-                android:layout_marginEnd="22dp"
-                android:clickable="true"
-                android:fontFamily="@font/poppins_bold"
-                android:foreground="?attr/selectableItemBackground"
-                android:gravity="center_vertical"
-                android:text="Our Team"
-                android:textSize="14.5sp"
-                app:drawableEndCompat="@drawable/ic_baseline_keyboard_arrow_right_24_1"
-                app:drawableTint="#5b72d8" />
-
-            <View
-                android:id="@+id/divOurTeam"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_below="@id/txtOurTeam"
-                android:layout_marginTop="8dp"
-                android:background="#d9d9d9" />
-
-            <TextView
-                android:id="@+id/txtAbout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/divOurTeam"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="13dp"
-                android:layout_marginEnd="22dp"
-                android:clickable="true"
-                android:fontFamily="@font/poppins_bold"
-                android:foreground="?attr/selectableItemBackground"
-                android:gravity="center_vertical"
-                android:text="About"
-                android:textSize="14.5sp"
-                app:drawableEndCompat="@drawable/ic_baseline_keyboard_arrow_right_24_1"
-                app:drawableTint="#5b72d8" />
-
-            <View
-                android:id="@+id/divAbout"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_below="@id/txtAbout"
-                android:layout_marginTop="8dp"
-                android:background="#d9d9d9" />
-
-            <TextView
-                android:id="@+id/txtSettings"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/divAbout"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="13dp"
-                android:layout_marginEnd="22dp"
-                android:clickable="true"
-                android:fontFamily="@font/poppins_bold"
-                android:foreground="?attr/selectableItemBackground"
-                android:gravity="center_vertical"
-                android:text="Settings"
-                android:textSize="14.5sp"
-                app:drawableEndCompat="@drawable/ic_baseline_keyboard_arrow_right_24_1"
-                app:drawableTint="#5b72d8" />
-
-            <View
-                android:id="@+id/divSettings"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_below="@id/txtSettings"
-                android:layout_marginTop="8dp"
-                android:background="#d9d9d9" />
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/btnSignUp"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:layout_below="@+id/divSettings"
-                android:layout_alignParentEnd="true"
-                android:layout_centerInParent="true"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="28dp"
-                android:layout_marginEnd="22dp"
-                android:layout_marginBottom="50dp"
-                android:elevation="5dp"
-                android:foreground="?attr/selectableItemBackground"
-                app:cardCornerRadius="15dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="#ff8b88"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:fontFamily="@font/poppins_bold"
-                        android:gravity="center"
-                        android:text="Logout"
-                        android:textColor="@color/white"
-                        android:textSize="19sp" />
-
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+                android:text="View Profile"
+                android:textColor="#244393"
+                android:textSize="15sp" />
 
         </RelativeLayout>
 
+
+    </androidx.core.widget.NestedScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/top_rounded_circle"
+        android:backgroundTint="@color/white">
+
+        <TextView
+            android:id="@+id/txtExplore"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:clickable="true"
+            android:fontFamily="@font/poppins_bold"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center_vertical"
+            android:paddingStart="25dp"
+            android:paddingTop="20dp"
+            android:paddingEnd="22dp"
+            android:paddingBottom="8dp"
+            android:text="Explore"
+            android:textSize="14.5sp"
+            app:drawableEndCompat="@drawable/ic_baseline_keyboard_arrow_right_24_1"
+            app:drawableTint="#5b72d8" />
+
+        <View
+            android:id="@+id/divExplore"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/txtExplore"
+            android:background="#d9d9d9" />
+
+
+        <TextView
+            android:id="@+id/txtIdeaSpot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/divExplore"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:clickable="true"
+            android:fontFamily="@font/poppins_bold"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center_vertical"
+            android:paddingStart="25dp"
+            android:paddingTop="15dp"
+            android:paddingEnd="22dp"
+            android:paddingBottom="8dp"
+            android:text="Ideaspot"
+            android:textSize="14.5sp"
+            app:drawableEndCompat="@drawable/ic_baseline_keyboard_arrow_right_24_1"
+            app:drawableTint="#5b72d8" />
+
+        <View
+            android:id="@+id/divIdeaspot"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/txtIdeaSpot"
+            android:background="#d9d9d9" />
+
+        <TextView
+            android:id="@+id/txtOurTeam"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/divIdeaspot"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/poppins_bold"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center_vertical"
+            android:paddingStart="25dp"
+            android:paddingTop="15dp"
+            android:paddingEnd="22dp"
+            android:paddingBottom="8dp"
+            android:text="Our Team"
+            android:textSize="14.5sp"
+            app:drawableEndCompat="@drawable/ic_baseline_keyboard_arrow_right_24_1"
+            app:drawableTint="#5b72d8" />
+
+        <View
+            android:id="@+id/divOurTeam"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/txtOurTeam"
+            android:background="#d9d9d9" />
+
+        <TextView
+            android:id="@+id/txtAbout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/divOurTeam"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/poppins_bold"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center_vertical"
+            android:paddingStart="25dp"
+            android:paddingTop="15dp"
+            android:paddingEnd="22dp"
+            android:paddingBottom="8dp"
+            android:text="About"
+            android:textSize="14.5sp"
+            app:drawableEndCompat="@drawable/ic_baseline_keyboard_arrow_right_24_1"
+            app:drawableTint="#5b72d8" />
+
+        <View
+            android:id="@+id/divAbout"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/txtAbout"
+            android:background="#d9d9d9" />
+
+        <TextView
+            android:id="@+id/txtFeedback"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/divAbout"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:clickable="true"
+            android:fontFamily="@font/poppins_bold"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center_vertical"
+            android:paddingStart="25dp"
+            android:paddingTop="15dp"
+            android:paddingEnd="22dp"
+            android:paddingBottom="8dp"
+            android:text="Feedback"
+            android:textSize="14.5sp"
+            app:drawableEndCompat="@drawable/ic_baseline_keyboard_arrow_right_24_1"
+            app:drawableTint="#5b72d8" />
+
+        <View
+            android:id="@+id/divSettings"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/txtFeedback"
+            android:background="#d9d9d9" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btnLogout"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_below="@+id/divSettings"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="22dp"
+            android:layout_marginBottom="20dp"
+            android:elevation="5dp"
+            android:foreground="?attr/selectableItemBackground"
+            app:cardCornerRadius="15dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ff8b88"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/poppins_bold"
+                    android:gravity="center"
+                    android:text="Logout"
+                    android:textColor="@color/white"
+                    android:textSize="19sp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
     </RelativeLayout>
 
-</androidx.core.widget.NestedScrollView>
+
+
+</RelativeLayout>

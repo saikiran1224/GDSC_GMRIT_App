@@ -15,6 +15,9 @@
             android:id="@+id/closeIcon"
             android:layout_width="30dp"
             android:layout_height="30dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_marginStart="20dp"
@@ -95,8 +98,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
                     android:layout_gravity="center"
+                    android:orientation="vertical"
                     android:padding="18dp">
 
                     <TextView
@@ -105,17 +108,18 @@
                         android:drawableStart="@drawable/ic_baseline_mail_outline_24"
                         android:drawablePadding="8dp"
                         android:fontFamily="@font/poppins"
-                        android:textColor="#707070"
                         android:text="Email ID"
+                        android:textColor="#707070"
                         android:textSize="18sp" />
 
                     <TextView
+                        android:id="@+id/txtStudentEmailID"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="#707070"
                         android:layout_marginTop="8dp"
                         android:fontFamily="@font/poppins"
                         android:text="knvrs.saikiran@gmail.com"
+                        android:textColor="#707070"
                         android:textSize="16sp" />
 
                 </LinearLayout>
@@ -150,7 +154,7 @@
                 android:layout_marginBottom="250dp"
                 android:fontFamily="@font/poppins_medium"
                 android:gravity="center"
-                android:text="Sorry, you haven't uploaded any certificates. Kindly update your Profile"
+                android:text="You haven't earned any Certificates so far!"
                 android:textSize="15.5sp" />
 
 

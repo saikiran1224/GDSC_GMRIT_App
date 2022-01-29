@@ -230,13 +230,17 @@
             android:textSize="22sp" />
 
         <TextView
+            android:id="@+id/txtSeeAllUpcoming"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/cardJoinCommunity"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="37dp"
             android:layout_marginEnd="20dp"
+            android:clickable="true"
+            android:focusable="true"
             android:fontFamily="@font/poppins_bold"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
             android:text="SEE ALL"
             android:textColor="#007ce0"
             android:textSize="14sp" />
@@ -282,7 +286,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/upcomingRecycler"
+            android:id="@+id/txtSeeAllPast"
             android:layout_alignParentEnd="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
             android:layout_marginTop="42dp"
             android:layout_marginEnd="20dp"
             android:fontFamily="@font/poppins_bold"
@@ -335,6 +343,7 @@
             android:layout_alignParentEnd="true"
             android:layout_marginTop="42dp"
             android:layout_marginEnd="20dp"
+            android:visibility="gone"
             android:fontFamily="@font/poppins_bold"
             android:text="SEE ALL"
             android:textColor="#007ce0"

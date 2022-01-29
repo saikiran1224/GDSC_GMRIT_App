@@ -102,6 +102,9 @@ class ExploreFragment : Fragment() {
 
     lateinit var eventDetailsList: ArrayList<EventDetailsData>
 
+    lateinit var txtUpcomingSeeAll: TextView
+    lateinit var txtPastSeeAll: TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -146,6 +149,9 @@ class ExploreFragment : Fragment() {
         carousel.registerLifecycle(lifecycle)
         iconNotifications = view.findViewById(R.id.iconNotifications)
 
+        txtUpcomingSeeAll = view.findViewById(R.id.txtSeeAllUpcoming)
+        txtPastSeeAll = view.findViewById(R.id.txtSeeAllPast)
+
         cardJoinGDSC = view.findViewById(R.id.cardJoinCommunity)
 
         recyclerUpcomingEvents = view.findViewById(R.id.upcomingRecycler)
@@ -179,6 +185,18 @@ class ExploreFragment : Fragment() {
 
         iconNotifications.setOnClickListener {
             val intent = Intent(context, NotificationsActivity::class.java)
+            startActivity(intent)
+        }
+
+        txtUpcomingSeeAll.setOnClickListener {
+            val intent = Intent(context, SeeAllEventsActivity::class.java)
+            intent.putExtra("typeOfEvent","Upcoming")
+            startActivity(intent)
+        }
+
+        txtPastSeeAll.setOnClickListener {
+            val intent = Intent(context, SeeAllEventsActivity::class.java)
+            intent.putExtra("typeOfEvent","Past")
             startActivity(intent)
         }
 

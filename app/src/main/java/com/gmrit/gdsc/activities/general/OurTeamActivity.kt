@@ -1,7 +1,9 @@
 package com.gmrit.gdsc.activities.general
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -15,6 +17,8 @@ class OurTeamActivity : AppCompatActivity() {
     lateinit var ourTeamAdapter: OurTeamAdapter
     lateinit var teamMembersList: ArrayList<TeamMemberData>
 
+    lateinit var closeIcon: ImageView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -22,7 +26,10 @@ class OurTeamActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_our_team)
 
+
         ourTeamRecycler = findViewById(R.id.ourTeamRecycler)
+
+        closeIcon = findViewById(R.id.closeIcon)
 
         teamMembersList = ArrayList()
 
@@ -38,6 +45,11 @@ class OurTeamActivity : AppCompatActivity() {
         ourTeamRecycler.adapter = ourTeamAdapter
         ourTeamRecycler.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         ourTeamRecycler.hasFixedSize()
+
+        closeIcon.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 }

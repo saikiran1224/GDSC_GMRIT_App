@@ -126,6 +126,9 @@ class ShareYourIdeaActivity : AppCompatActivity() {
 
             }.addOnFailureListener {
                 Toast.makeText(this,it.localizedMessage,Toast.LENGTH_LONG).show()
+
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
             }
 
 
