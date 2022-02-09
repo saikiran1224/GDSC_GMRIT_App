@@ -47,6 +47,21 @@
                 android:textColor="@color/white"
                 android:textSize="25sp" />
 
+            <ImageView
+                android:id="@+id/backButtonIcon"
+                android:layout_width="35dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:layout_height="35dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/full_round_circle"
+                android:backgroundTint="@color/white"
+                android:padding="6dp"
+                android:src="@drawable/ic_baseline_arrow_back_24"
+                app:tint="@color/pink_web" />
+
+
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/imageProfilePhoto"
                 android:layout_width="58dp"

@@ -14,11 +14,13 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.PagerAdapter
 import androidx.viewpager2.widget.ViewPager2
+import com.bumptech.glide.Glide
 import com.gmrit.gdsc.R
 import com.google.common.collect.ArrayTable
 import org.w3c.dom.Text
+import java.util.*
 
-class SliderOnBoardingAdapter(private val context: Context, private val imagesList: ArrayList<Int>, private val titlesList: ArrayList<String>, private val descriptionList: ArrayList<String>): RecyclerView.Adapter<SliderOnBoardingAdapter.ViewPagerViewHolder>() {
+class SliderOnBoardingAdapter(private val context: Context, private val imagesList: ArrayList<String>, private val titlesList: ArrayList<String>, private val descriptionList: ArrayList<String>): RecyclerView.Adapter<SliderOnBoardingAdapter.ViewPagerViewHolder>() {
 
     inner class ViewPagerViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
@@ -30,7 +32,8 @@ class SliderOnBoardingAdapter(private val context: Context, private val imagesLi
 
     override fun onBindViewHolder(holder: SliderOnBoardingAdapter.ViewPagerViewHolder, position: Int) {
 
-        holder.itemView.findViewById<ImageView>(R.id.imageView).setImageResource(imagesList[position])
+        Glide.with(context).load(imagesList[position]).into(holder.itemView.findViewById<ImageView>(R.id.imageView))
+        //holder.itemView.findViewById<ImageView>(R.id.imageView).setImageResource(imagesList[position])
 
         val spannable = SpannableStringBuilder(titlesList[position].toString())
         if(titlesList[position].toString().equals("Find New Experience"))

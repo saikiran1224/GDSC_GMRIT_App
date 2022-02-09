@@ -19,4 +19,7 @@
     <string name="aravind_profile_pic"><![CDATA[https://firebasestorage.googleapis.com/v0/b/gdsc-gmrit.appspot.com/o/Static_Images%2Faravind_vinjamuri_SrKcXYU.jpg?alt=media&token=33b092ab-dc7e-4b5b-95c4-487a011fbca3]]></string>
     <string name="yeswanth_profile_pic"><![CDATA[https://firebasestorage.googleapis.com/v0/b/gdsc-gmrit.appspot.com/o/Static_Images%2Fchoudari_yeswanth_hKXe85F.jpg?alt=media&token=621ded78-e291-4226-a6cd-33886fe19ed3]]></string>
     <string name="vinaysriram_pic"><![CDATA[https://firebasestorage.googleapis.com/v0/b/gdsc-gmrit.appspot.com/o/Static_Images%2Fvinay_sriram_Sw5nUFA.jpg?alt=media&token=5487d5c7-87cf-44d6-8e5f-5f6f86294629]]></string>
+    <string name="blue"><![CDATA[https://firebasestorage.googleapis.com/v0/b/gdsc-gmrit.appspot.com/o/Static_Images%2Fblue.png?alt=media&token=fea9f797-81c0-43da-8f8c-1e8dd057ef68]]></string>
+    <string name="red"><![CDATA[https://firebasestorage.googleapis.com/v0/b/gdsc-gmrit.appspot.com/o/Static_Images%2Fred.webp?alt=media&token=91a624cd-0a6a-4ddd-967e-f1df0d79ea71]]></string>
+    <string name="yellow"><![CDATA[https://firebasestorage.googleapis.com/v0/b/gdsc-gmrit.appspot.com/o/Static_Images%2Fyellow.webp?alt=media&token=bfbf3192-b8c8-458b-8ce6-172e0db31577]]></string>
 </resources>

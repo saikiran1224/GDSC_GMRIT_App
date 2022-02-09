@@ -64,6 +64,7 @@ class SeeAllEventsActivity : AppCompatActivity() {
         closeIcon.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
+            finishAffinity()
         }
 
         // loading Event Details Data
@@ -122,7 +123,7 @@ class SeeAllEventsActivity : AppCompatActivity() {
 
                 eventsRecycler.adapter = eventsAdapter
                 eventsRecycler.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-                eventsRecycler.setHasFixedSize(true)
+                //eventsRecycler.setHasFixedSize(true)
 
 
             }

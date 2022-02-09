@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.text.Spannable
 import android.text.SpannableStringBuilder
 import android.text.style.ForegroundColorSpan
@@ -28,6 +29,8 @@ import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
 import com.tbuonomo.viewpagerdotsindicator.DotsIndicator
 import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
+import java.util.*
+import kotlin.properties.Delegates
 
 class OnBoardingActivity : AppCompatActivity() {
 
@@ -37,6 +40,10 @@ class OnBoardingActivity : AppCompatActivity() {
     lateinit var btnContinue: CardView
 
     lateinit var auth: FirebaseAuth
+
+    private var TIME_LIMIT by Delegates.notNull<Long>()
+    lateinit var swipeTimer: Timer
+
 
     @SuppressLint("ResourceAsColor")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,9 +59,12 @@ class OnBoardingActivity : AppCompatActivity() {
 
         AppPreferences.init(this)
 
+
         btnContinue = findViewById(R.id.btnContinue)
 
         auth = FirebaseAuth.getInstance()
+        swipeTimer = Timer()
+        TIME_LIMIT = 2000
 
         // Binding View Pager
         sliderViewPager2 = findViewById(R.id.sliderOnBoardingViewPager)
@@ -62,7 +72,7 @@ class OnBoardingActivity : AppCompatActivity() {
         // Dots Indicator
         val dotsIndicator = findViewById<DotsIndicator>(R.id.dots_indicator)
 
-        val imagesList = arrayListOf<Int>(R.drawable.blue, R.drawable.red, R.drawable.yellow)
+        val imagesList = arrayListOf<String>(getString(R.string.blue), getString(R.string.red),getString(R.string.yellow))
 
         val titlesList = arrayListOf<String>("Find New Experience", "Improve your Skills", "Join our Community")
 
@@ -73,16 +83,54 @@ class OnBoardingActivity : AppCompatActivity() {
         // Now setting adapter
         sliderViewPager2.adapter = sliderOnBoardingAdapter
 
-        sliderViewPager2.beginFakeDrag()
+        //sliderViewPager2.beginFakeDrag()
         sliderViewPager2.orientation = ViewPager2.ORIENTATION_HORIZONTAL
 
         dotsIndicator.setViewPager2(sliderViewPager2)
+
+        startViewPagerScrolling()
 
 
         // calling to show BottomSheetDialog on clicking Button
         btnContinue.setOnClickListener { showLoginBottomSheet() }
 
+        // retrieving intent from sign up page
+        val intent = intent
+        if(intent.getStringExtra("showLogin") == "True") {
+            showLoginBottomSheet()
+        }
+
     }
+
+    fun startViewPagerScrolling() {
+
+        var currentPage = 0
+        val NUM_PAGES = 3
+
+
+        // Auto start of viewpager
+        val handler = Handler()
+        val Update = Runnable {
+            if (currentPage == NUM_PAGES) {
+                currentPage = 0
+            }
+            sliderViewPager2.setCurrentItem(currentPage++, true)
+        }
+
+
+        swipeTimer.schedule(object : TimerTask() {
+            override fun run() {
+                handler.post(Update)
+            }
+
+            override fun cancel(): Boolean {
+                handler.removeCallbacks(Update)
+                return true
+            }
+        }, TIME_LIMIT, TIME_LIMIT )
+
+    }
+
 
     private fun showLoginBottomSheet() {
 
@@ -183,5 +231,8 @@ class OnBoardingActivity : AppCompatActivity() {
 
         bottomSheetDialog.show()
     }
+
+
+
 
 }

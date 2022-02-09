@@ -8,6 +8,7 @@
         <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/drawable/background_gradient.xml" value="0.199609375" />
         <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/drawable/bottom_nav_tab_background.xml" value="0.199609375" />
         <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/drawable/full_round_circle.xml" value="0.199609375" />
+        <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/drawable/ic_baseline_keyboard_arrow_right_24.xml" value="0.1615" />
         <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/drawable/idea_background.xml" value="0.199609375" />
         <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/drawable/join_gdsc_color_bg.xml" value="0.199609375" />
         <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/drawable/rounded_textview.xml" value="0.199609375" />
@@ -42,7 +43,10 @@
         <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/layout/fragment_screen_slide.xml" value="0.1875" />
         <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/layout/layout_banner_display.xml" value="0.1875" />
         <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/layout/layout_event_display.xml" value="0.2" />
+        <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/layout/layout_notification.xml" value="0.18532818532818532" />
         <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/layout/layout_team_card.xml" value="0.1875" />
+        <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/layout/list_item.xml" value="0.1875" />
+        <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/layout/logout_dialog.xml" value="0.1875" />
         <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/layout/onboarding_slide_layout.xml" value="0.1875" />
         <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/layout/sign_in_bottom_sheet.xml" value="0.1875" />
         <entry key="..\:/Android Apps/GDSCGMRIT/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.1875" />

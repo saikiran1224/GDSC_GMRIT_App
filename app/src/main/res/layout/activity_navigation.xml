@@ -54,6 +54,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/poppins"
+                android:gravity="center"
                 android:text="Sai Kiran Kopparthi"
                 android:textColor="#244393"
                 android:textSize="18sp" />
@@ -63,17 +64,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtStudentName"
-                android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
                 android:clickable="true"
-                android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_right_24"
+                android:layout_centerHorizontal="true"
                 android:focusable="true"
                 android:fontFamily="@font/poppins_bold"
                 android:foreground="?attr/selectableItemBackgroundBorderless"
-                android:gravity="center_vertical"
                 android:text="View Profile"
+                android:drawablePadding="-5dp"
                 android:textColor="#244393"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                app:drawableEndCompat="@drawable/ic_baseline_keyboard_arrow_right_24" />
 
         </RelativeLayout>
 

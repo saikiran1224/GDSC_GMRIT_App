@@ -25,7 +25,7 @@ class OurTeamAdapter(private val context: Context, private val teamMembersList: 
     @SuppressLint("UseCompatLoadingForDrawables")
     override fun onBindViewHolder(holder: OurTeamAdapter.ViewHolder, position: Int) {
 
-        Glide.with(context).load(teamMembersList[position].memPhotUrl).into(holder.memPhotoUrl)
+        Glide.with(context).load(teamMembersList[position].memPhotUrl).placeholder(R.drawable.gdsc_temp_logo).into(holder.memPhotoUrl)
 
         holder.memName.text = teamMembersList[position].memName
         holder.memRole.text = teamMembersList[position].memRole

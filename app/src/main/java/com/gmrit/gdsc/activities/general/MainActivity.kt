@@ -1,11 +1,18 @@
 package com.gmrit.gdsc.activities.general
 
+import android.content.ContentValues.TAG
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.gmrit.gdsc.R
 import com.gmrit.gdsc.fragments.ExploreFragment
 import com.gmrit.gdsc.fragments.MyEventsFragment
+import com.google.android.gms.common.GoogleApiAvailability
+import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.messaging.FirebaseMessaging
 
 
 class MainActivity : AppCompatActivity() {
@@ -29,9 +36,27 @@ class MainActivity : AppCompatActivity() {
 
         replaceFragment(exploreFragment)
 
+
         bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
+        FirebaseMessaging.getInstance().token.addOnCompleteListener(OnCompleteListener { task ->
+            if (!task.isSuccessful) {
+                Log.w("TAG", "Fetching FCM registration token failed", task.exception)
+                return@OnCompleteListener
+            }
+
+            // Get new FCM registration token
+            val token = task.result
+
+            // Log and toast
+            //val msg = getString(R.string.msg_token_fmt, token)
+            Log.d("TAG", token.toString())
+            //Toast.makeText(baseContext, msg, Toast.LENGTH_SHORT).show()
+        })
+
     }
+
+
 
   private val mOnNavigationItemSelectedListener =
         BottomNavigationView.OnNavigationItemSelectedListener { item ->
@@ -57,5 +82,9 @@ class MainActivity : AppCompatActivity() {
         transaction.replace(com.gmrit.gdsc.R.id.fragmentContainer,fragment)
         transaction.commit()
         return true
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
     }
 }

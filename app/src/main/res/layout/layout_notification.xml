@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="@color/purple"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:textSize="14.5sp"
+        android:id="@+id/txtDateTime"
+        android:text="1 min ago" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_height="wrap_content"
+        android:text="Hey! Welcome to GDSC Family"
+        android:id="@+id/txtNotificationTitle"
+        android:textColor="#352e41"
+        android:fontFamily="@font/poppins_bold"
+        android:layout_marginTop="8dp"
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="5dp"
+        android:id="@+id/txtNotificationMessage"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/poppins"
+        android:autoLink="all"
+        android:text="We are feeling excited to host you in our upcoming events and we are sure that you will love it!" />
+
+ <View
+     android:layout_width="match_parent"
+     android:layout_height="0.8dp"
+     android:layout_marginTop="8dp"
+     android:background="#A1A1A1" />
+
+</LinearLayout>

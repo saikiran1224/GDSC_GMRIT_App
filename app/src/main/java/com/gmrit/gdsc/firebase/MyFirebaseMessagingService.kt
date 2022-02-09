@@ -8,13 +8,19 @@ import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.media.RingtoneManager
 import android.os.Build
+import android.util.Log
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
+import androidx.work.Data
+import androidx.work.OneTimeWorkRequest
+import androidx.work.OneTimeWorkRequestBuilder
+import androidx.work.WorkManager
 import com.gmrit.gdsc.R
 import com.gmrit.gdsc.activities.general.MainActivity
 import com.gmrit.gdsc.activities.general.SeeAllEventsActivity
 import com.gmrit.gdsc.models.NotificationData
+import com.gmrit.gdsc.workers.NotificationWorker
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.messaging.FirebaseMessagingService
@@ -29,9 +35,9 @@ class MyFirebaseMessagingService:FirebaseMessagingService() {
 
     override fun onMessageReceived(remoteMessage: RemoteMessage) {
 
-        //startActivity(intent)
+
         val notificationManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
-        val notificationID = Random.nextInt(3000)
+        val notificationID = java.util.Random().nextInt(3000)
 
         // Get Message details
         val title = remoteMessage.data["title"]
@@ -40,16 +46,6 @@ class MyFirebaseMessagingService:FirebaseMessagingService() {
         var intent: Intent? = null
         intent = Intent(this, MainActivity::class.java)
 
-
-
-
-
-
-     /*   if(title!!.contains("Event")) {
-            intent = Intent(this, SeeAllEventsActivity::class.java)
-            intent.putExtra("typeOfEvent","Upcoming")
-        } else {
-        }*/
 
         /*
         Apps targeting SDK 26 or above (Android O) must implement notification channels and add its notifications
@@ -81,28 +77,69 @@ class MyFirebaseMessagingService:FirebaseMessagingService() {
         }
         notificationManager.notify(notificationID, notificationBuilder.build())
 
-      /*  // retrieving current Date and Time
+    }
+
+  /*  private fun scheduleWork() {
+
+        Log.d("TAG", "hello $remoteMessageObtained")
+
+        val workManager = WorkManager.getInstance(application)
+        val storeNotificationRequest = OneTimeWorkRequestBuilder<NotificationWorker>()
+            .setInputData(createInputDataForUri())
+            .build()
+
+        workManager.enqueue(storeNotificationRequest)
+
+    }
+
+    private fun createInputDataForUri(): Data {
+        val builder = Data.Builder()
+        builder.putString("title", remoteMessageObtained.data["title"])
+        builder.putString("message", remoteMessageObtained.data["message"])
+        return builder.build()
+    }*/
+
+
+/*
+    private fun storeNotificationData(remoteMessage: RemoteMessage) {
+
+        Toast.makeText(this, "Working under progress...", Toast.LENGTH_LONG).show()
+
+        // retrieving current Date and Time
         val currentDate: String = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(Date())
         val currentTime: String = SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(Date())
 
-
         // sending Notification Data to Firebase
         val  db = Firebase.firestore
-        val notificationData = NotificationData(title.toString(), message.toString(), currentDate + " "+currentTime)
+        val notificationData = NotificationData(remoteMessage.data["title"].toString(), remoteMessage.data["message"].toString(), currentDate + " "+currentTime)
         db.collection("Notification_Data")
             .add(notificationData)
             .addOnSuccessListener {
 
             }.addOnFailureListener {
                 Toast.makeText(this,"Some Network Error Occurred!",Toast.LENGTH_LONG).show()
-            }*/
+            }
+
+
     }
+*/
+
+
+    override fun onNewToken(token: String) {
+        Log.d(TAG, "Refreshed token: $token")
+
+        // If you want to send messages to this application instance or
+        // manage this apps subscriptions on the server side, send the
+        // FCM registration token to your app server.
+
+    }
+
 
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     private fun setupChannels(notificationManager: NotificationManager?) {
         val adminChannelName: CharSequence = "New notification"
-        val adminChannelDescription = "Device to devie notification"
+        val adminChannelDescription = "Device to device notification"
         val adminChannel: NotificationChannel
         adminChannel = NotificationChannel(
             ADMIN_CHANNEL_ID,

@@ -60,6 +60,9 @@ dependencies {
 
     implementation 'com.tbuonomo:dotsindicator:4.2'
 
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.23'
+
+
     // For Image Slider
     // Circle Indicator (To fix the xml preview "Missing classes" error)
     implementation 'me.relex:circleindicator:2.1.6'
@@ -73,5 +76,13 @@ dependencies {
 
     // Circle ImageView
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    // For FCM
+    implementation 'com.mcxiaoke.volley:library-aar:1.0.0'
+
+    // Work Manager
+    // Kotlin + coroutines
+    implementation("androidx.work:work-runtime-ktx:2.7.1")
+
 
 }

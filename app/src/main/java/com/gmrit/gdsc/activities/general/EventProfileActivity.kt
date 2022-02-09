@@ -40,6 +40,8 @@ class EventProfileActivity : AppCompatActivity() {
 
     var enrollEnabled: Boolean = false
 
+    lateinit var backButtonIcon: ImageView
+
     lateinit var btnEnrollNow: CardView
     lateinit var btnEnrollNowText: TextView
 
@@ -67,6 +69,7 @@ class EventProfileActivity : AppCompatActivity() {
         btnEnrollNow = findViewById(R.id.btnEnrollNow)
         btnEnrollNowText = findViewById(R.id.btnEnrollNowText)
 
+        backButtonIcon = findViewById(R.id.backButtonIcon)
 
         // Retreving the paramters that are received from Intent
         getEventDetailsFromIntent()
@@ -113,6 +116,12 @@ class EventProfileActivity : AppCompatActivity() {
 
         }
 
+        backButtonIcon.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finishAffinity()
+        }
+
 
     }
 
@@ -128,5 +137,9 @@ class EventProfileActivity : AppCompatActivity() {
         eventInstructorName = intent.getStringExtra("eventInstructorName")!!
         eventInstructorPhotoUrl = intent.getStringExtra("eventInstructorPhotoUrl")!!
         thingsYouWillLearn = intent.getStringExtra("thingsYouWillLearn")!!
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
     }
 }

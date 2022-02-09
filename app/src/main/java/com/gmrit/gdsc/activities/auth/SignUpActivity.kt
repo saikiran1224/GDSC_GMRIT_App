@@ -8,13 +8,18 @@ import android.text.SpannableStringBuilder
 import android.text.style.ForegroundColorSpan
 import android.text.style.UnderlineSpan
 import android.util.Patterns
+import android.widget.ArrayAdapter
+import android.widget.AutoCompleteTextView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.cardview.widget.CardView
+import androidx.core.widget.NestedScrollView
 import com.gmrit.gdsc.R
 import com.gmrit.gdsc.activities.general.MainActivity
+import com.gmrit.gdsc.activities.onboarding.OnBoardingActivity
 import com.gmrit.gdsc.models.StudentData
 import com.gmrit.gdsc.utils.AppPreferences
+import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
@@ -30,6 +35,8 @@ class SignUpActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
 
+    lateinit var nestedScrollView: NestedScrollView
+
     lateinit var editName: TextInputEditText
     lateinit var editEmailID: TextInputEditText
     lateinit var editJNTUNo: TextInputEditText
@@ -42,6 +49,22 @@ class SignUpActivity : AppCompatActivity() {
     lateinit var edtPassword: TextInputLayout
     lateinit var edtConfirmPassword: TextInputLayout
 
+    private var CSE_DEPT = Pair("Computer Science Engineering", "CSE")
+    private var IT_DEPT = Pair("Information Technology", "IT")
+    private var ECE_DEPT = Pair("Electronics and Communication Engineering", "ECE")
+    private var EEE_DEPT = Pair("Electrical and Electronics Engineering","EEE")
+    private var CIV_DEPT = Pair("Civil Engineering","CIV")
+    private var MECH_DEPT = Pair("Mechanical Engineering","MECH")
+    private var CHEM_DEPT = Pair("Chemical Engineering","CHEM")
+
+    private var FIRST_YEAR = Pair("1st Year", "1")
+    private var SECOND_YEAR = Pair("2nd Year", "2")
+    private var THIRD_YEAR = Pair("3rd Year", "3")
+    private var FOURTH_YEAR = Pair("4th Year", "4")
+
+    lateinit var yearsSpinner:AutoCompleteTextView
+    lateinit var deptSpinner: AutoCompleteTextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         // setting color of Status Bar
@@ -51,11 +74,20 @@ class SignUpActivity : AppCompatActivity() {
 
         AppPreferences.init(this)
 
+        nestedScrollView = findViewById(R.id.nestedScrollView)
+
         btnSignUp = findViewById(R.id.btnSignUp)
         txtWelcomeBack = findViewById(R.id.txtWelcomeBack)
         txtLogin = findViewById(R.id.txtLogin)
 
         auth = FirebaseAuth.getInstance()
+
+        yearsSpinner = findViewById(R.id.yearOfStudyList)
+        deptSpinner = findViewById(R.id.deptList)
+
+        // initialising data to Spinners
+        setUpDepartmentList()
+        setUpYearList()
 
         edtName = findViewById(R.id.edtFullName)
         edtEmailID = findViewById(R.id.edtEmailID)
@@ -74,6 +106,8 @@ class SignUpActivity : AppCompatActivity() {
             val name = editName.text.toString().trim()
             val emailID = editEmailID.text.toString().trim()
             val JNTUNo = editJNTUNo.text.toString().trim()
+            val deptName = deptSpinner.text.toString().trim()
+            val yearOfStudy = yearsSpinner.text.toString().trim()
             val password = editPassword.text.toString().trim()
             val confirmPassword = editConfirmPassword.text.toString().trim()
 
@@ -86,9 +120,14 @@ class SignUpActivity : AppCompatActivity() {
             } else if(JNTUNo.isEmpty() || JNTUNo.length < 9) {
                 edtEmailID.error = ""
                 edtJNTUNo.error = "Please enter valid JNTU No."
+            } else if(deptName == "Choose Department") {
+                edtJNTUNo.error = ""
+                Snackbar.make(nestedScrollView,"Please choose your Department", Snackbar.LENGTH_LONG).show()
+            } else if(yearOfStudy == "Choose Year of Study") {
+                Snackbar.make(nestedScrollView,"Please choose your Year of Study", Snackbar.LENGTH_LONG).show()
             } else if(password.isEmpty() || password.length<6) {
                 edtJNTUNo.error = ""
-                edtPassword.error = "Please enter Password of minimum of 6 characters"
+                edtPassword.error = "Please enter Password of minimum 6 characters"
             } else if(confirmPassword.isEmpty() || confirmPassword.length<6) {
                 edtPassword.error = ""
                 edtConfirmPassword.error = "Please enter Confirm Password"
@@ -108,7 +147,7 @@ class SignUpActivity : AppCompatActivity() {
                             // If the user successfully authenticated then only we are going to add his information into Cloud Firestore
                             // For Cloud Firestore
                             val db = Firebase.firestore
-                            val userData = StudentData(name, emailID, JNTUNo)
+                            val userData = StudentData(name, emailID, JNTUNo,deptName,yearOfStudy)
                             db.collection("Students_Data")
                                 .add(userData)
                                 .addOnSuccessListener {
@@ -120,6 +159,8 @@ class SignUpActivity : AppCompatActivity() {
                                     AppPreferences.studentName = name
                                     AppPreferences.studentEmail = emailID
                                     AppPreferences.studentJNTUNo = JNTUNo
+                                    AppPreferences.studentDept = deptName
+                                    AppPreferences.studentYearOfStudy = yearOfStudy
 
                                     val intent = Intent(this, WelcomeActivity::class.java)
                                     startActivity(intent)
@@ -149,7 +190,11 @@ class SignUpActivity : AppCompatActivity() {
         txtLogin!!.text = spannable_3
 
         txtLogin.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+
+            // going back to sign in page
+            // Navigate user back and show the Bottom Sheet dialog
+            val intent = Intent(this, OnBoardingActivity::class.java)
+            intent.putExtra("showLogin","True")
             startActivity(intent)
         }
     }
@@ -157,5 +202,28 @@ class SignUpActivity : AppCompatActivity() {
     private fun isValidEmail(email: String): Boolean {
         val pattern: Pattern = Patterns.EMAIL_ADDRESS
         return pattern.matcher(email).matches()
+    }
+
+    private fun setUpYearList() {
+        val yearNumbers = listOf(
+            FIRST_YEAR.first,
+            SECOND_YEAR.first,
+            THIRD_YEAR.first,
+            FOURTH_YEAR.first
+        )
+        val adapter = ArrayAdapter(
+            this,
+            R.layout.list_item, yearNumbers
+        )
+        (yearsSpinner as? AutoCompleteTextView)?.setAdapter(adapter)
+    }
+
+    private fun setUpDepartmentList() {
+        val deptNames = listOf(CSE_DEPT.first, IT_DEPT.first,ECE_DEPT.first,EEE_DEPT.first,CIV_DEPT.first,MECH_DEPT.first,CHEM_DEPT.first)
+        val adapter = ArrayAdapter(
+            this,
+            R.layout.list_item, deptNames
+        )
+        (deptSpinner as? AutoCompleteTextView)?.setAdapter(adapter)
     }
 }

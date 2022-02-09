@@ -99,6 +99,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/card_layout"
             android:layout_marginStart="12dp"
+            android:textColor="#484848"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/poppins_bold"
             android:text="Android Study Jam"
@@ -110,10 +111,11 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/eventTitle"
             android:layout_marginStart="12dp"
-            android:gravity="start"
             android:layout_marginEnd="5dp"
+            android:textColor="#484848"
             android:layout_toStartOf="@id/btnKnowMore"
             android:fontFamily="@font/poppins_medium"
+            android:gravity="start"
             android:text="Keep yourself updated with the latest launch"
             android:textSize="12sp" />
 

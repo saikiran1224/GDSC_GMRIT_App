@@ -225,6 +225,16 @@ class ExploreFragment : Fragment() {
             startActivity(intent)
         }
 
+
+
+
+        return view
+    }
+
+
+    override fun onStart() {
+        super.onStart()
+
         // Loading the Banners Data
         loadBannersData()
 
@@ -232,7 +242,11 @@ class ExploreFragment : Fragment() {
         loadEventDetailsData()
 
 
-        return view
+    }
+
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
     }
 
     @SuppressLint("SimpleDateFormat")
@@ -282,12 +296,12 @@ class ExploreFragment : Fragment() {
                 pastEventsAdapter = EventsAdapter(requireContext(), pastEventsList)
                 recyclerPastEvents.adapter = pastEventsAdapter
                 recyclerPastEvents.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-                recyclerPastEvents.setHasFixedSize(true)
+                //recyclerPastEvents.setHasFixedSize(true)
 
                 upcomingEventsAdapter = EventsAdapter(requireContext(),upcomingEventsList)
                 recyclerUpcomingEvents.adapter = upcomingEventsAdapter
                 recyclerUpcomingEvents.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-                recyclerUpcomingEvents.setHasFixedSize(true)
+                //recyclerUpcomingEvents.setHasFixedSize(true)
 
 
             }
@@ -372,5 +386,6 @@ class ExploreFragment : Fragment() {
         super.onDetach()
         swipeTimer.cancel()
     }
+
 
 }

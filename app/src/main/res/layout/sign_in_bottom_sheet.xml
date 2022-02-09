@@ -102,6 +102,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="15dp"
             android:fontFamily="@font/poppins_bold"
+            android:visibility="gone"
             android:lineSpacingExtra="4.8sp"
             android:text="Forget Password ? Click here"
             android:textColor="#1e1e1e"

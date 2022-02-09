@@ -16,6 +16,8 @@ object AppPreferences {
     private val STUD_NAME = Pair("studentName", "")
     private val STUD_JNTU_NO = Pair("studentJNTUNo", "")
     private val STUD_EMAIL_ID = Pair("studentEmailID", "")
+    private val STUD_DEPT = Pair("studentDeptName","")
+    private val STUD_YEAR = Pair("studentYearOfStudy","")
 
     fun init(context: Context) {
         preferences = context.getSharedPreferences(NAME, MODE)
@@ -57,4 +59,21 @@ object AppPreferences {
         set(value) = preferences.edit {
             it.putString(STUD_EMAIL_ID.first, value)
         }
+
+    var studentDept: String?
+        get() = preferences.getString(STUD_DEPT.first, STUD_DEPT.second)
+        set(value) = preferences.edit {
+            it.putString(STUD_DEPT.first, value)
+        }
+
+    var studentYearOfStudy: String?
+        get() = preferences.getString(STUD_YEAR.first, STUD_YEAR.second)
+        set(value) = preferences.edit {
+            it.putString(STUD_YEAR.first, value)
+        }
+
+
+
+
+
 }

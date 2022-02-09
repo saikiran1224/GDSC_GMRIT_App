@@ -41,17 +41,16 @@
             app:tint="@color/black" />
 
         <TextView
+            android:id="@+id/txtWelcomeStatic"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/iconMenu"
-            android:id="@+id/txtWelcomeStatic"
-            android:text="Welcome!"
-            android:fontFamily="@font/poppins_bold"
-            android:textColor="#352e41"
-            android:textSize="28sp"
             android:layout_marginStart="11dp"
             android:layout_marginTop="15dp"
-            />
+            android:fontFamily="@font/poppins_bold"
+            android:text="Welcome!"
+            android:textColor="#352e41"
+            android:textSize="28sp" />
 
         <TextView
             android:id="@+id/txtStudentName"
@@ -257,7 +256,7 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/upcomingRecycler"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/txtUpcomingDesc"
             android:layout_alignParentStart="true"
@@ -310,7 +309,7 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/pastEventsRecycler"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/txtPastEventsDesc"
             android:layout_alignParentStart="true"

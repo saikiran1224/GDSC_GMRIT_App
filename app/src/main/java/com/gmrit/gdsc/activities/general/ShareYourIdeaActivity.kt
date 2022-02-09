@@ -75,6 +75,7 @@ class ShareYourIdeaActivity : AppCompatActivity() {
         btnbackButton.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
+            finishAffinity()
         }
 
         // setting Data taking from Shared Preferences and setting on EditText
@@ -123,12 +124,14 @@ class ShareYourIdeaActivity : AppCompatActivity() {
 
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
+                finishAffinity()
 
             }.addOnFailureListener {
                 Toast.makeText(this,it.localizedMessage,Toast.LENGTH_LONG).show()
 
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
+                finishAffinity()
             }
 
 

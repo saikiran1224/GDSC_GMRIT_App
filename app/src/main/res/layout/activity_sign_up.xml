@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:background="@drawable/signup_background"
+    android:id="@+id/nestedScrollView"
     android:layout_height="match_parent"
     tools:context=".activities.auth.SignUpActivity">
 
@@ -68,6 +69,7 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/editName"
                         android:layout_width="match_parent"
+                        android:fontFamily="@font/poppins"
                         android:textCursorDrawable="@color/blue_button_clr"
                         android:layout_height="match_parent"
                         android:inputType="text" />
@@ -92,6 +94,7 @@
                         android:id="@+id/editEmailID"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:fontFamily="@font/poppins"
                         android:textCursorDrawable="@color/blue_button_clr"
                         android:inputType="textEmailAddress" />
 
@@ -115,17 +118,81 @@
                         android:id="@+id/editJNTU"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:fontFamily="@font/poppins"
                         android:textCursorDrawable="@color/blue_button_clr"
                         android:inputType="text" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/edtJNTUNum"
+                    android:id="@+id/edtDeptName"
+                    app:endIconTint="#000"
+                    app:hintAnimationEnabled="true"
+                    app:endIconMode="dropdown_menu"
+                    android:layout_marginStart="20dp"
+                    android:background="@color/white"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    app:boxStrokeColor="@color/blue_button_clr"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/deptList"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="15dp"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/poppins"
+                        android:text="Choose Department"
+                        android:inputType="none"
+                        android:backgroundTint="@color/white"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/edtDeptName"
+                    android:id="@+id/edtYearOfStudy"
+                    app:endIconTint="#000"
+                    app:endIconMode="dropdown_menu"
+                    android:layout_marginStart="20dp"
+                    android:background="@color/white"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    app:boxStrokeColor="@color/blue_button_clr"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/yearOfStudyList"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Choose Year of Study"
+                        android:padding="15dp"
+                        android:fontFamily="@font/poppins"
+                        android:textSize="16sp"
+                        android:inputType="none"
+                        android:backgroundTint="@color/white"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+
+                <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/edtPassword"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/edtJNTUNum"
+                    android:layout_below="@id/edtYearOfStudy"
                     app:boxStrokeColor="@color/blue_button_clr"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="10dp"
@@ -138,6 +205,7 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/editPassword"
                         android:layout_width="match_parent"
+                        android:fontFamily="@font/poppins"
                         android:layout_height="match_parent"
                         android:textCursorDrawable="@color/blue_button_clr"
                         android:inputType="textPassword" />
@@ -162,6 +230,7 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/editConfirmPassword"
                         android:cursorVisible="true"
+                        android:fontFamily="@font/poppins"
                         android:layout_width="match_parent"
                         android:textCursorDrawable="@color/blue_button_clr"
                         android:layout_height="match_parent"

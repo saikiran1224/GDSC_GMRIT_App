@@ -12,7 +12,7 @@ import com.gmrit.gdsc.utils.AppPreferences
 @SuppressLint("CustomSplashScreen")
 class SplashScreenActivity : AppCompatActivity() {
 
-    private val SPLASH_TIMER = 2500;
+    private val SPLASH_TIMER = 3000;
 
     @SuppressLint("ResourceAsColor")
     override fun onCreate(savedInstanceState: Bundle?) {

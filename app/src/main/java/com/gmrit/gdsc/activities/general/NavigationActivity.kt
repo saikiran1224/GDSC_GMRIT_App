@@ -1,11 +1,13 @@
 package com.gmrit.gdsc.activities.general
 
 import android.annotation.SuppressLint
+import android.app.Dialog
 import android.content.Intent
 import android.media.Image
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
@@ -65,7 +67,7 @@ class NavigationActivity : AppCompatActivity() {
             startActivity(intent)
             overridePendingTransition(R.anim.left_to_right,R.anim.right_to_left)
 
-            finish()
+            finishAffinity()
 
         }
 
@@ -119,6 +121,20 @@ class NavigationActivity : AppCompatActivity() {
         }
 
         btnLogout.setOnClickListener {
+            showLogoutDialog()
+        }
+
+    }
+
+    private fun showLogoutDialog() {
+
+        val logoutDialog = Dialog(this)
+        logoutDialog.setContentView(R.layout.logout_dialog)
+        logoutDialog.setCancelable(false)
+        logoutDialog.setCanceledOnTouchOutside(false)
+        logoutDialog.window!!.setBackgroundDrawableResource(android.R.color.transparent)
+
+        logoutDialog.findViewById<CardView>(R.id.btnLogout).setOnClickListener {
 
             AppPreferences.isLogin = false
             AppPreferences.studentName = ""
@@ -128,6 +144,12 @@ class NavigationActivity : AppCompatActivity() {
             val intent = Intent(this, OnBoardingActivity::class.java)
             startActivity(intent)
         }
+
+        logoutDialog.findViewById<CardView>(R.id.btnCancel).setOnClickListener {
+            logoutDialog.dismiss()
+        }
+
+        logoutDialog.show()
 
     }
 

@@ -25,7 +25,7 @@ class BannersAdapter(private val context: Context, private val bannersDataList: 
 
         holder.eventImage.setImageResource(eventsDataList[position].eventImageUrl)
 */
-      Glide.with(context).load(bannersDataList[position].bannerImageUrl.toString()).into(holder.imageView)
+      Glide.with(context).load(bannersDataList[position].bannerImageUrl.toString()).placeholder(R.drawable.placeholder).into(holder.imageView)
     }
 
     override fun getItemCount(): Int {

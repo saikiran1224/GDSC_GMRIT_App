@@ -68,7 +68,7 @@ class FeedbackActivity : AppCompatActivity() {
                         .addOnSuccessListener {
                             val intent = Intent(this, NavigationActivity::class.java)
                             startActivity(intent)
-                            Toast.makeText(this,"Thanks for writing your feedback!",Toast.LENGTH_LONG).show()
+                            Toast.makeText(this,"Feedback sent Successfully! We will get back to you soon...",Toast.LENGTH_LONG).show()
                             Snackbar.make(nestedScrollView, "Feedback sent Successfully! We will get back to you soon...", Snackbar.LENGTH_LONG).show()
 
                         }

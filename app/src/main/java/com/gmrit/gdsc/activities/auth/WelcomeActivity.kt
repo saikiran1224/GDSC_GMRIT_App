@@ -23,6 +23,7 @@ class WelcomeActivity : AppCompatActivity() {
         btnNext.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
+            finishAffinity()
         }
     }
 }
