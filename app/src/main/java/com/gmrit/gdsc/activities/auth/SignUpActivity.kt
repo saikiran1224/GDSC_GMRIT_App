@@ -164,6 +164,7 @@ class SignUpActivity : AppCompatActivity() {
 
                                     val intent = Intent(this, WelcomeActivity::class.java)
                                     startActivity(intent)
+                                    finishAffinity()
                                 }
                                 .addOnFailureListener{
                                     Toast.makeText(this, "Some Error Occurred! Please try again after sometime.", Toast.LENGTH_LONG).show()

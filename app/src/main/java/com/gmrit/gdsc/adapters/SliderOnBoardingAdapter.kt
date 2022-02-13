@@ -20,7 +20,7 @@ import com.google.common.collect.ArrayTable
 import org.w3c.dom.Text
 import java.util.*
 
-class SliderOnBoardingAdapter(private val context: Context, private val imagesList: ArrayList<String>, private val titlesList: ArrayList<String>, private val descriptionList: ArrayList<String>): RecyclerView.Adapter<SliderOnBoardingAdapter.ViewPagerViewHolder>() {
+class SliderOnBoardingAdapter(private val context: Context, private val imagesList: ArrayList<Int>, private val titlesList: ArrayList<String>, private val descriptionList: ArrayList<String>): RecyclerView.Adapter<SliderOnBoardingAdapter.ViewPagerViewHolder>() {
 
     inner class ViewPagerViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 

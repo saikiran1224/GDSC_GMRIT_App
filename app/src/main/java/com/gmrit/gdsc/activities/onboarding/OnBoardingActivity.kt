@@ -72,7 +72,7 @@ class OnBoardingActivity : AppCompatActivity() {
         // Dots Indicator
         val dotsIndicator = findViewById<DotsIndicator>(R.id.dots_indicator)
 
-        val imagesList = arrayListOf<String>(getString(R.string.blue), getString(R.string.red),getString(R.string.yellow))
+        val imagesList = arrayListOf<Int>(R.drawable.ob1, R.drawable.ob2, R.drawable.ob3)
 
         val titlesList = arrayListOf<String>("Find New Experience", "Improve your Skills", "Join our Community")
 
@@ -211,6 +211,7 @@ class OnBoardingActivity : AppCompatActivity() {
                                         val intent = Intent(this, WelcomeActivity::class.java)
                                         Toast.makeText(this, "Welcome, " + AppPreferences.studentName +" back to GDSC GMRIT!", Toast.LENGTH_LONG).show()
                                         startActivity(intent)
+                                        finishAffinity()
 
                                     }
 

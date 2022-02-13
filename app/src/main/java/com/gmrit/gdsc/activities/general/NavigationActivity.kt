@@ -143,6 +143,7 @@ class NavigationActivity : AppCompatActivity() {
 
             val intent = Intent(this, OnBoardingActivity::class.java)
             startActivity(intent)
+            finishAffinity()
         }
 
         logoutDialog.findViewById<CardView>(R.id.btnCancel).setOnClickListener {

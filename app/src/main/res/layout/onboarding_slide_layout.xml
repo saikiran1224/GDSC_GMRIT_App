@@ -9,10 +9,11 @@
         android:layout_height="350dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginLeft="5dp"
+        android:layout_marginLeft="15dp"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp"
-        android:layout_marginRight="5dp"
-        android:src="@drawable/gdsc_logo" />
+        android:layout_marginRight="20dp"
+        android:src="@drawable/ob1" />
 
     <TextView
         android:id="@+id/txtTitle"

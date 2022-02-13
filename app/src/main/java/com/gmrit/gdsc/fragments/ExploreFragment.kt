@@ -225,9 +225,6 @@ class ExploreFragment : Fragment() {
             startActivity(intent)
         }
 
-
-
-
         return view
     }
 
@@ -256,6 +253,10 @@ class ExploreFragment : Fragment() {
 
         db.collection("Events_Data")
             .addSnapshotListener { value, e ->
+
+                eventDetailsList.clear()
+                upcomingEventsList.clear()
+                pastEventsList.clear()
 
                 if (e != null) {
                     Log.w(TAG, "Listen failed.", e)
@@ -296,15 +297,16 @@ class ExploreFragment : Fragment() {
                 pastEventsAdapter = EventsAdapter(requireContext(), pastEventsList)
                 recyclerPastEvents.adapter = pastEventsAdapter
                 recyclerPastEvents.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-                //recyclerPastEvents.setHasFixedSize(true)
+                recyclerPastEvents.setHasFixedSize(true)
 
                 upcomingEventsAdapter = EventsAdapter(requireContext(),upcomingEventsList)
                 recyclerUpcomingEvents.adapter = upcomingEventsAdapter
                 recyclerUpcomingEvents.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-                //recyclerUpcomingEvents.setHasFixedSize(true)
-
+                recyclerUpcomingEvents.setHasFixedSize(true)
 
             }
+
+
     }
 
     private fun loadBannersData() {
