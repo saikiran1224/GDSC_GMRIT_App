@@ -96,8 +96,6 @@
             </intent-filter>
         </activity>
 
-
-
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
             android:resource="@drawable/gdsc_logo" />

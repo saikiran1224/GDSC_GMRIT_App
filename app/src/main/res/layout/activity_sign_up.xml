@@ -70,7 +70,8 @@
                         android:id="@+id/editName"
                         android:layout_width="match_parent"
                         android:fontFamily="@font/poppins"
-                        android:textCursorDrawable="@color/blue_button_clr"
+                        android:textCursorDrawable="@null"
+                        android:cursorVisible="true"
                         android:layout_height="match_parent"
                         android:inputType="text" />
 
@@ -95,7 +96,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:fontFamily="@font/poppins"
-                        android:textCursorDrawable="@color/blue_button_clr"
+                        android:textCursorDrawable="@null"
+                        android:cursorVisible="true"
                         android:inputType="textEmailAddress" />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -119,7 +121,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:fontFamily="@font/poppins"
-                        android:textCursorDrawable="@color/blue_button_clr"
+                        android:textCursorDrawable="@null"
+                        android:cursorVisible="true"
                         android:inputType="text" />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -207,7 +210,8 @@
                         android:layout_width="match_parent"
                         android:fontFamily="@font/poppins"
                         android:layout_height="match_parent"
-                        android:textCursorDrawable="@color/blue_button_clr"
+                        android:textCursorDrawable="@null"
+                        android:cursorVisible="true"
                         android:inputType="textPassword" />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -229,10 +233,10 @@
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/editConfirmPassword"
-                        android:cursorVisible="true"
                         android:fontFamily="@font/poppins"
                         android:layout_width="match_parent"
-                        android:textCursorDrawable="@color/blue_button_clr"
+                        android:textCursorDrawable="@null"
+                        android:cursorVisible="true"
                         android:layout_height="match_parent"
                         android:inputType="textPassword" />
 

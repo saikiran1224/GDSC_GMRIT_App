@@ -61,7 +61,8 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textCursorDrawable="@color/lightYellow"
+                android:textCursorDrawable="@null"
+                android:cursorVisible="true"
                 android:id="@+id/editEmailID"
                 android:inputType="textEmailAddress" />
 
@@ -87,7 +88,8 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textCursorDrawable="@color/lightYellow"
+                android:textCursorDrawable="@null"
+                android:cursorVisible="true"
                 android:id="@+id/editPassword"
                 android:inputType="textPassword" />
 

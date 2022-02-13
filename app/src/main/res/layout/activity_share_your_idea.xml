@@ -96,7 +96,7 @@
                             android:id="@+id/editName"
                             android:layout_width="match_parent"
                             android:cursorVisible="true"
-                            android:textCursorDrawable="@color/blue_button_clr"
+                            android:textCursorDrawable="@null"
                             android:layout_height="match_parent"
                             android:inputType="text" />
 
@@ -121,7 +121,7 @@
                             android:layout_width="match_parent"
                             android:cursorVisible="true"
                             android:layout_height="match_parent"
-                            android:textCursorDrawable="@color/blue_button_clr"
+                            android:textCursorDrawable="@null"
                             android:inputType="textEmailAddress" />
 
                     </com.google.android.material.textfield.TextInputLayout>
@@ -147,7 +147,7 @@
                             android:hint="Describe your Idea..."
                             android:cursorVisible="true"
                             android:gravity="top|start"
-                            android:textCursorDrawable="@color/blue_button_clr"
+                            android:textCursorDrawable="@null"
                             android:inputType="text" />
 
                     </com.google.android.material.textfield.TextInputLayout>
