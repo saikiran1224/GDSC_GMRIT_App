@@ -3,19 +3,15 @@ package com.gmrit.gdsc.activities.general
 import android.annotation.SuppressLint
 import android.app.Dialog
 import android.content.Intent
-import android.media.Image
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import com.gmrit.gdsc.R
 import com.gmrit.gdsc.activities.onboarding.OnBoardingActivity
 import com.gmrit.gdsc.utils.AppPreferences
-import com.gmrit.gdsc.utils.OnSwipeTouchListener
-import org.w3c.dom.Text
 
 class NavigationActivity : AppCompatActivity() {
 
@@ -64,10 +60,10 @@ class NavigationActivity : AppCompatActivity() {
         closeIcon.setOnClickListener {
 
             val intent = Intent(this, MainActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
             startActivity(intent)
             overridePendingTransition(R.anim.left_to_right,R.anim.right_to_left)
-
-            finishAffinity()
+            
 
         }
 
@@ -97,6 +93,7 @@ class NavigationActivity : AppCompatActivity() {
 
         txtExplore.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
             startActivity(intent)
         }
 

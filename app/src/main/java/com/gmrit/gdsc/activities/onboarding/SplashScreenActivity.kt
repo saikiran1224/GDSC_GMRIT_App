@@ -1,13 +1,24 @@
 package com.gmrit.gdsc.activities.onboarding
 
 import android.annotation.SuppressLint
+import android.app.Dialog
+import android.content.ContentValues
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.util.Log
+import android.widget.Toast
+import androidx.cardview.widget.CardView
+import com.gmrit.gdsc.BuildConfig
 import com.gmrit.gdsc.R
 import com.gmrit.gdsc.activities.general.MainActivity
+import com.gmrit.gdsc.models.AppUtilsData
+import com.gmrit.gdsc.models.EventDetailsData
 import com.gmrit.gdsc.utils.AppPreferences
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.firestore.ktx.toObject
+import com.google.firebase.ktx.Firebase
 
 @SuppressLint("CustomSplashScreen")
 class SplashScreenActivity : AppCompatActivity() {
@@ -41,9 +52,7 @@ class SplashScreenActivity : AppCompatActivity() {
                 finish()
             }
 
-
         }, SPLASH_TIMER.toLong())
-
     }
 
 }

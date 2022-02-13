@@ -245,7 +245,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/btnSignUp"
                     android:layout_width="150dp"
-                    android:layout_height="45dp"
+                    android:layout_height="48dp"
                     android:layout_below="@+id/edtConfirmPassword"
                     android:layout_marginTop="14dp"
                     android:elevation="5dp"
@@ -280,13 +280,13 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/btnSignUp"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginTop="15dp"
                     android:layout_marginBottom="18dp"
                     android:fontFamily="@font/poppins_bold"
                     android:lineSpacingExtra="4.8sp"
                     android:text="Already having an account? Login here"
                     android:textColor="#5c5c5c"
-                    android:textSize="13sp"
+                    android:textSize="14sp"
                     android:textStyle="bold" />
 
             </RelativeLayout>

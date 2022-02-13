@@ -70,12 +70,14 @@ class FeedbackActivity : AppCompatActivity() {
                             startActivity(intent)
                             Toast.makeText(this,"Feedback sent Successfully! We will get back to you soon...",Toast.LENGTH_LONG).show()
                             Snackbar.make(nestedScrollView, "Feedback sent Successfully! We will get back to you soon...", Snackbar.LENGTH_LONG).show()
+                            finishAffinity()
 
                         }
                         .addOnFailureListener {
                             val intent = Intent(this, NavigationActivity::class.java)
                             startActivity(intent)
                             Snackbar.make(nestedScrollView, "Some Error Occurred! Please try again...", Snackbar.LENGTH_LONG).show()
+                            finishAffinity()
                         }
                 }
             }
@@ -84,6 +86,7 @@ class FeedbackActivity : AppCompatActivity() {
 
         closeIcon.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
             startActivity(intent)
         }
     }

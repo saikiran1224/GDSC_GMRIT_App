@@ -34,8 +34,8 @@ class LearnProgrammingActivity : AppCompatActivity() {
         backButtonIcon.setOnClickListener {
 
             val intent = Intent(this, MainActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
             startActivity(intent)
-            finishAffinity()
 
         }
 
