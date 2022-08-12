@@ -159,3 +159,7 @@ Follow me for more projects and dont forget to Give a ⭐ if you like this appli
 <img src="./readme_assets/gdsc_header.png" >
 
 </div>
+
+## 🔑 LICENSE 
+
+This project has MIT License. Refer to [LICENSE.md]([./LICENSE.md](https://github.com/saikiran1224/GDSC_GMRIT_App/blob/master/LICENSE.md)) for more details
