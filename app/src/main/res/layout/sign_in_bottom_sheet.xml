@@ -17,7 +17,7 @@
             android:layout_height="6dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="28dp"
+            android:layout_marginBottom="20dp"
             android:background="@drawable/sides_rounded_circle"
             android:backgroundTint="#5C5D5D5D" />
 
@@ -150,8 +150,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/btnLogin"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="25dp"
-            android:layout_marginBottom="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="35dp"
             android:fontFamily="@font/poppins_bold"
             android:lineSpacingExtra="4.8sp"
             android:text="Don't have an account? Signup here"
